@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta content="CSS3Secret,CSS3解密,CSS3奇淫巧计,CSS3妙用,CSS3图形" name="Keywords">
+    <meta content="使用CSS3实现各类图形" name="description">
+    <title>CSS3奇思妙想</title>
+    <link rel="stylesheet" type="text/css" href="../static/css/reset.css">
+    <link rel="stylesheet" type="text/css" href="../static/css/index.css">
+</head>
+<body>
+  <h1 style="height: 0;overflow: hidden;">CSS3奇思妙想，使用CSS3实现各类图形</h1>
+  <a style="width:149px;height:149px;position:fixed;top:0;right:0;z-index:9999;" href="https://github.com/chokcoco/css3-" target="_blank">
+    <img src="http://chokcoco.github.io/demo/curveJS/images/forkme.png">
+  </a>
+  <div class="container">
+    <!-- bubbly 气泡三角形-->
+    <section class="code-wrap cf">
+      <div class="css-live-wrap">
+        <summary>气泡三角形</summary>
+        <summary>利用 border 的 transparent 特性实现</summary>
+        <hgroup class="bubbly">
+          <h1>.bubbly</h1>
+        </hgroup>
+      </div>
+      <style class="code" contenteditable=true>
+        .bubbly {
+          position: absolute;
+          top:50%;
+          left: 50%;
+          transform:translate(-50%,-50%);
+          background: #00aabb;
+          border-radius: .4em;
+          width: 260px;
+          padding: 60px 20px;
+          text-align: center;
+          color: white;
+          font-size: 200%;
+        }
+        .bubbly:after {
+          content: '';
+          position: absolute;
+          bottom: 0;
+          left: 50%;
+          border: 34px solid transparent;
+          border-top-color: #00aabb;
+          border-bottom: 0;
+          border-left: 0;
+          margin: 0 0 -34px -17px;
+        }
+      </style>
+    </section>
+
+    <!-- notching 切角 -->
+    <section class="code-wrap cf">
+      <div class="css-live-wrap">
+        <summary>切角</summary>
+        <summary>使用线性渐变实现</summary>
+        <hgroup class="notching">
+          <h1>.notching</h1>
+        </hgroup>
+      </div>
+      <style class="code" contenteditable=true>
+        .notching{
+          position: absolute;
+          top:50%;
+          left: 50%;
+          transform:translate(-50%,-50%);
+          width: 160px;
+          padding: 60px 20px;
+          text-align: center;
+          color: white;
+          font-size: 200%;
+        }
+        .notching{
+          background:
+          linear-gradient(135deg, transparent 15px, deeppink 0)
+          top left,
+          linear-gradient(-135deg, transparent 15px, deeppink 0)
+          top right,
+          linear-gradient(-45deg, transparent 15px, deeppink 0)
+          bottom right,
+          linear-gradient(45deg, transparent 15px, deeppink 0)
+          bottom left;
+          background-size: 50% 50%;
+          background-repeat: no-repeat;
+        }
+      </style>
+    </section>
+
+    <!-- arc 弧形切角 -->
+    <section class="code-wrap cf">
+      <div class="css-live-wrap">
+        <summary>弧形切角</summary>
+        <summary>使用径向渐变实现</summary>
+        <hgroup class="arc">
+          <h1>.arc</h1>
+        </hgroup>
+      </div>
+      <style class="code" contenteditable=true>
+        .arc{
+          position: absolute;
+          top:50%;
+          left: 50%;
+          transform:translate(-50%,-50%);
+          width: 60px;
+          padding: 60px;
+          text-align: center;
+          color: white;
+          font-size: 200%;
+        }
+        .arc {
+          background:
+          radial-gradient(circle at top left,
+          transparent 15px, yellowgreen 0) top left,
+          radial-gradient(circle at top right,
+          transparent 15px, yellowgreen 0) top right,
+          radial-gradient(circle at bottom right,
+          transparent 15px, yellowgreen 0) bottom right,
+          radial-gradient(circle at bottom left,
+          transparent 15px, yellowgreen 0) bottom left;
+          background-size: 50% 50%;
+          background-repeat: no-repeat;
+        }
+      </style>
+    </section>
+
+    <!-- pesudo 伪类实现按钮明暗变化 -->
+    <section class="code-wrap cf">
+      <div class="css-live-wrap">
+        <summary>单个颜色实现 hover 和 active 时的明暗变化效果</summary>
+        <summary>利用伪类及透明度实现</summary>
+        <hgroup class="pesudo">
+          <h1>.pesudo</h1>
+        </hgroup>
+      </div>
+      <style class="code" contenteditable=true>
+        .pesudo{
+          position: absolute;
+          top:50%;
+          left: 50%;
+          transform:translate(-50%,-50%);
+          width: 120px;
+          padding: 60px;
+          text-align: center;
+          color: white;
+          font-size: 200%;
+          background:#00aabb;
+          cursor:pointer;
+        }
+        .pesudo:before{
+          position: absolute;
+          top: 0; right: 0; bottom: 0; left: 0;
+          z-index:-1;
+          background:rgba(0,0,0,.1);
+        }
+        .pesudo:hover:before{
+          content:"";
+        }
+        .pesudo:after{
+          position: absolute;
+          top: 0; right: 0; bottom: 0; left: 0;
+          z-index:-1;
+          background:rgba(255,255,255,.2);
+        }
+        .pesudo:active:after{
+          content:"";
+        }
+      </style>
+    </section>
+
+    <!-- trapezoid 伪类加旋转透视实现梯形 -->
+    <section class="code-wrap cf">
+      <div class="css-live-wrap">
+        <summary>梯形</summary>
+        <summary>利用伪类加旋转透视实现</summary>
+        <hgroup class="trapezoid">
+          <h1>.trapezoid</h1>
+        </hgroup>
+      </div>
+      <style class="code" contenteditable=true>
+        .trapezoid{
+          position: absolute;
+          top:50%;
+          left: 50%;
+          transform:translate(-50%,-50%);
+          width: 160px;
+          padding: 60px;
+          text-align: center;
+          color: white;
+          font-size: 200%;
+        }
+        .trapezoid:before{
+          content:"";
+          position: absolute;
+          top: 0; right: 0; bottom: 0; left: 0;
+          transform:perspective(40px) scaleY(1.3) rotateX(5deg);
+          transform-origin: bottom;
+          background:deeppink;
+          z-index:-1;
+        }
+      </style>
+    </section>
+
+    <!-- trapezoid 伪类加旋转透视实现梯形 -->
+    <section class="code-wrap cf">
+      <div class="css-live-wrap">
+        <summary>饼图</summary>
+        <summary>利用伪类、线性渐变、旋转实现</summary>
+        <hgroup class="pie">
+          <h1>.pie</h1>
+        </hgroup>
+      </div>
+      <style class="code" contenteditable=true>
+        .pie{
+          position: absolute;
+          top:50%;left: 50%;
+          transform:translate(-50%,-50%);
+          width: 200px;line-height:200px;
+          border-radius:50%;
+          text-align: center;
+          color: white;
+          font-size: 200%;
+          background-color:yellowgreen;
+          overflow:hidden;
+          background-image:
+          linear-gradient(to right, transparent 50%, #655 0);
+        }
+        .pie:before{
+          content:"";
+          position:absolute;
+          top:0;left:50%;
+          width:50%;height:100%;
+          background-color: inherit;
+          transform-origin: left;
+          z-index:-1;
+          transform:rotate(.3turn);
+        }
+      </style>
+    </section>
+  </div>
+</body>
+</html>
