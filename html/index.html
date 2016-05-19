@@ -10,7 +10,7 @@
 </head>
 <body>
   <h1 style="height: 0;overflow: hidden;">CSS3奇思妙想，使用CSS3实现各类图形</h1>
-  <a style="width:149px;height:149px;position:fixed;top:0;right:0;z-index:9999;" href="https://github.com/chokcoco/css3-" target="_blank">
+  <a style="width:149px;height:149px;position:fixed;top:0;right:0;z-index:9999;" href="https://github.com/chokcoco/magicCss" target="_blank">
     <img src="http://chokcoco.github.io/demo/curveJS/images/forkme.png">
   </a>
   <div class="container">
@@ -202,7 +202,7 @@
       </style>
     </section>
 
-    <!-- trapezoid 伪类加旋转透视实现梯形 -->
+    <!-- pie 利用伪类、线性渐变、旋转实现饼图 -->
     <section class="code-wrap cf">
       <div class="css-live-wrap">
         <summary>饼图</summary>
@@ -236,6 +236,69 @@
           z-index:-1;
           transform:rotate(.3turn);
         }
+      </style>
+    </section>
+
+    <!-- trapezoid 伪类加拉伸实现平行四边形 -->
+    <section class="code-wrap cf">
+      <div class="css-live-wrap">
+        <summary>平行四边形</summary>
+        <summary>利用伪类、拉伸实现</summary>
+        <hgroup class="parallelogram">
+          <h1>.parallelogram</h1>
+        </hgroup>
+      </div>
+      <style class="code" contenteditable=true>
+        .parallelogram{
+          position: absolute;
+          top:50%;left: 50%;
+          transform:translate(-50%,-50%);
+          width: 280px;line-height:150px;
+          text-align: center;
+          color: white;
+          font-size: 200%;
+
+        }
+        .parallelogram:before{
+          content: '';
+          position: absolute;
+          top: 0; right: 0; bottom: 0; left: 0;
+          background-color:#00aabb;
+          z-index:-1;
+          transform: skew(.08turn);
+        }
+
+      </style>
+    </section>
+
+    <!-- trapezoid 伪类加拉伸加旋转实现菱形 -->
+    <section class="code-wrap cf">
+      <div class="css-live-wrap">
+        <summary>菱形</summary>
+        <summary>利用伪类、旋转实现</summary>
+        <hgroup class="diamond">
+          <h1>.diamond</h1>
+        </hgroup>
+      </div>
+      <style class="code" contenteditable=true>
+        .diamond{
+          position: absolute;
+          top:50%;left: 50%;
+          transform:translate(-50%,-50%);
+          width: 200px;line-height:200px;
+          text-align: center;
+          color: white;
+          font-size: 200%;
+        }
+        .diamond:before{
+          content: '';
+          position: absolute;
+          top: 0; right: 0; bottom: 0; left: 0;
+          background-color:deeppink;
+          z-index:-1;
+          transform: rotateZ(45deg);
+        }
+
       </style>
     </section>
   </div>
