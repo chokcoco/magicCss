@@ -2,6 +2,8 @@
 
 CSS3奇思妙想，使用CSS3实现各类图形
 
+[Demo](http://chokcoco.github.io/magicCss/html/index.html)
+
 ## 由来
 
 拜读了 [《CSS Secret》](https://github.com/cssmagic/CSS-Secrets) 这本大作之后，有了这个项目的想法。
