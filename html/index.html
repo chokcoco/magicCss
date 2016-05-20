@@ -450,6 +450,31 @@
         }
       </style>
     </section>
+
+    <!-- stripe 渐变实现条纹背景图案 -->
+    <section class="code-wrap cf">
+      <div class="css-live-wrap">
+        <summary>条纹背景图</summary>
+        <summary>利用渐变实现</summary>
+        <hgroup class="stripe">
+          <h1>.stripe</h1>
+        </hgroup>
+      </div>
+      <style class="code" contenteditable=true>
+        .stripe{
+          position: absolute;
+          top:50%;left: 50%;
+          transform:translate(-50%,-50%);
+          width: 200px;line-height:200px;
+          text-align: center;
+          color: white;
+          font-size: 200%;
+          background:deeppink;
+          border-radius:.5em;
+          background:repeating-linear-gradient(45deg,deeppink, deeppink 15px, #03A9F4 0, #03A9F4 30px)
+        }
+      </style>
+    </section>
   </div>
 </body>
 </html>
