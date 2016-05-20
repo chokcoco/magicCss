@@ -145,6 +145,7 @@
           text-align: center;
           color: white;
           font-size: 200%;
+          border-radius:1em;
           background:#00aabb;
           cursor:pointer;
         }
@@ -225,6 +226,7 @@
           overflow:hidden;
           background-image:
           linear-gradient(to right, transparent 50%, #655 0);
+          cursor:pointer;
         }
         .pie:before{
           content:"";
@@ -234,7 +236,11 @@
           background-color: inherit;
           transform-origin: left;
           z-index:-1;
-          transform:rotate(.3turn);
+          transform:rotate(.1turn);
+        }
+        .pie:hover:before{
+          transition:all 1s;
+          transform:rotate(.45turn);
         }
       </style>
     </section>
@@ -301,6 +307,150 @@
 
       </style>
     </section>
+
+    <!-- blur 伪类、滤镜实现毛玻璃效果 -->
+<!--     <section class="code-wrap cf">
+      <div class="css-live-wrap" style="background: url(../static/images/exp.jpg) no-repeat center center; background-size:60% 60%;">
+        <summary>毛玻璃</summary>
+        <summary>利用伪类、滤镜实现</summary>
+        <hgroup class="blur">
+          <h1>.blur</h1>
+        </hgroup>
+      </div>
+      <style class="code" contenteditable=true>
+        .blur{
+          position: absolute;
+          top:50%;left: 50%;
+          transform:translate(-50%,-50%);
+          width: 200px;line-height:200px;
+          text-align: center;
+          color: white;
+          font-size: 200%;
+          overflow:hidden;
+          background: hsla(0,0%,100%,.3);
+        }
+        .blur:before{
+          background: url(../static/images/exp.jpg) 0 / cover fixed;
+        }
+        .blur:before{
+          content: '';
+          position: absolute;
+          top: 0; right: 0; bottom: 0; left: 0;
+          -webkit-filter: blur(20px);
+          filter: blur(20px);
+        }
+
+      </style>
+    </section> -->
+
+    <!-- corner 切角、伪类、渐变、旋转实现折角 -->
+    <section class="code-wrap cf">
+      <div class="css-live-wrap">
+        <summary>折角</summary>
+        <summary>利用切角、伪类、渐变、旋转实现</summary>
+        <hgroup class="corner">
+          <h1>.corner</h1>
+        </hgroup>
+      </div>
+      <style class="code" contenteditable=true>
+        .corner{
+          position: absolute;
+          top:50%;left: 50%;
+          transform:translate(-50%,-50%);
+          width: 120px;line-height:120px;
+          padding:40px;
+          text-align: center;
+          color: white;
+          font-size: 200%;
+          background:linear-gradient(-150deg,transparent 1.5em, yellowgreen  0);
+          border-radius:.5em;
+        }
+        .corner:before{
+          content: '';
+          position: absolute;
+          top: 0; right: 0;
+          background:
+          linear-gradient(to left bottom,transparent 50%, rgba(0,0,0,.2) 0, rgba(0,0,0,.4)) 100% 0 no-repeat;
+          width: 1.73em; height: 3em;
+          transform: translateY(-1.3em) rotate(-30deg);
+          transform-origin: bottom right;
+          border-bottom-left-radius: inherit;
+          box-shadow: -.2em .2em .3em -.1em rgba(0,0,0,.15);
+        }
+
+      </style>
+    </section>
+
+    <!-- corner background-image 实现下划线 -->
+    <section class="code-wrap cf">
+      <div class="css-live-wrap">
+        <summary>下划线</summary>
+        <summary>利用 background-image 实现</summary>
+        <hgroup class="underline">
+          <h1 class="underline1-ajkps">.underline1-ajkpys</h1>
+          <h1 class="underline2-ajkps">.underline2-ajkpys</h1>
+          <h1 class="underline3-ajkps">.underline3-ajkpys</h1>
+        </hgroup>
+      </div>
+      <style class="code" contenteditable=true>
+        .underline{
+          position: absolute;
+          top:50%;left: 50%;
+          transform:translate(-50%,-50%);
+          width: 400px;height:200px;
+          text-align: center;
+          color: white;
+          font-size: 200%;
+          background:#00aabb;
+          border-radius:.5em;
+        }
+        .underline1-ajkps,.underline2-ajkps,.underline3-ajkps{
+          cursor:pointer;
+          position: absolute;
+          left:16%;
+          text-shadow: .1em 0 #00aabb, -.1em 0 #00aabb;
+          transition:1s;
+        }
+        .underline1-ajkps{
+          top:10%;
+          background: linear-gradient(white, white) no-repeat;
+          background-size: 100% 1px;
+          background-position: -10em 1.15em;
+        }
+        .underline1-ajkps:hover{
+          background-position: 0 1.15em;
+        }
+        .underline2-ajkps{
+          top:38%;
+          background:
+          linear-gradient(90deg,white 50%, transparent 0) repeat-x;
+          background-size: .2em 2px;
+          background-position: -3em 1.15em;
+        }
+        .underline2-ajkps:hover{
+          background-position: 0 1.15em;
+        }
+
+        .underline3-ajkps{
+          top:66%;
+          background:
+            linear-gradient(-45deg, transparent 40%, white 0, white 60%, transparent 0) 0 1em,
+            linear-gradient(45deg, transparent 40%, white 0, white 60%, transparent 0) .1em 1em;
+          background-repeat: repeat-x;
+          background-size: .15em .1em;
+          background-position: -3em 1.15em;
+        }
+        .underline3-ajkps:hover{
+          background:
+            linear-gradient(-45deg, transparent 40%, deeppink 0, deeppink 60%, transparent 0) 0 1em,
+            linear-gradient(45deg, transparent 40%, deeppink 0, deeppink 60%, transparent 0) .1em 1em;
+          background-repeat: repeat-x;
+          background-size: .15em .1em;
+          background-position: 0 1.15em;
+        }
+      </style>
+    </section>
   </div>
 </body>
 </html>
+

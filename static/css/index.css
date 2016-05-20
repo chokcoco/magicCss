@@ -20,10 +20,10 @@
 	height:100%;
 	box-sizing: border-box;
 	font-size:14px;
+	background: #ffe;
 	display: block;
   float: right;
   padding: 1em;
-  background: #ffe;
   font-family: Consolas, Monaco, monospace;
   white-space: pre;
   color:#333;
@@ -31,11 +31,24 @@
   overflow-y:scroll;
 }
 summary{
+	position:absolute;
+	cursor:default;
+	left:0;
 	color: #999;
   font-size: 14px;
   margin: 20px 0 0 20px;
-  border-left: 2px solid #03A9F4;
-  padding-left: 10px;
-  text-shadow: 0 1px 1px #eee;
+  border-left: 2px solid #FF9800;
+  padding: 0 10px;
+  text-shadow: 0 0.2px hsl(0,0%,85%);
+  background: linear-gradient(#FF9800, #FF9800) no-repeat;
+  background-size: 100% 2px;
+  background-position: -400px 1.21em;
+  transition:.5s;
+}
+summary:nth-child(2){
+	margin-top:60px;
+}
 
+summary:hover{
+	background-position: -0em 1.21em;
 }
