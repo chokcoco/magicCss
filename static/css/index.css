@@ -15,6 +15,55 @@
 	height:100%;
 	float:left;
 }
+.star{
+    position: absolute;
+    top: 20px;
+    right: 40px;
+    width: 0;
+    height: 0;
+    color: #E91E63;
+    display: block;
+    border-left: 2.54px solid transparent;
+    border-right: 2.54px solid transparent;
+    border-bottom: 9px solid #E91E63;
+    /* -webkit-filter: drop-shadow(0px 0px 1px #A09105); */
+    cursor:pointer;
+}
+.star:before{
+    content: "";
+    position: absolute;
+    top: 8.65px;
+    left: -9.92px;
+    width: 0;
+    height: 0;
+    color: #E91E63;
+    display: block;
+    border-left: 12.5px solid transparent;
+    border-right: 12.5px solid transparent;
+    border-bottom: 9.08px solid #E91E63;
+    transform-origin: top center;
+    transform: rotate(36deg);
+}
+.star:after{
+    content: "";
+    position: absolute;
+    top: 8.65px;
+    left: -15px;
+    width: 0;
+    height: 0;
+    color: #E91E63;
+    display: block;
+    border-left: 12.5px solid transparent;
+    border-right: 12.5px solid transparent;
+    border-bottom: 9.08px solid #E91E63;
+    transform-origin: top center;
+    transform: rotate(-36deg);
+}
+.star:hover{
+	transition:all 2s;
+	transform:rotateY(360deg);
+}
+
 .code{
 	width: 50%;
 	height:100%;

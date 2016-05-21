@@ -54,6 +54,7 @@
     <!-- notching 切角 -->
     <section class="code-wrap cf">
       <div class="css-live-wrap">
+        <div class="star" title="致敬《CSS SECRET》作者，此实例是书中例子"></div>
         <summary>切角</summary>
         <summary>使用线性渐变实现</summary>
         <hgroup class="notching">
@@ -91,6 +92,7 @@
     <!-- arc 弧形切角 -->
     <section class="code-wrap cf">
       <div class="css-live-wrap">
+        <div class="star" title="致敬《CSS SECRET》作者，此实例是书中例子"></div>
         <summary>弧形切角</summary>
         <summary>使用径向渐变实现</summary>
         <hgroup class="arc">
@@ -206,6 +208,7 @@
     <!-- pie 利用伪类、线性渐变、旋转实现饼图 -->
     <section class="code-wrap cf">
       <div class="css-live-wrap">
+      <div class="star" title="致敬《CSS SECRET》作者，此实例是书中例子"></div>
         <summary>饼图</summary>
         <summary>利用伪类、线性渐变、旋转实现</summary>
         <hgroup class="pie">
@@ -346,6 +349,7 @@
     <!-- corner 切角、伪类、渐变、旋转实现折角 -->
     <section class="code-wrap cf">
       <div class="css-live-wrap">
+        <div class="star" title="致敬《CSS SECRET》作者，此实例是书中例子"></div>
         <summary>折角</summary>
         <summary>利用切角、伪类、渐变、旋转实现</summary>
         <hgroup class="corner">
@@ -384,6 +388,7 @@
     <!-- corner background-image 实现下划线 -->
     <section class="code-wrap cf">
       <div class="css-live-wrap">
+        <div class="star" title="致敬《CSS SECRET》作者，此实例是书中例子"></div>
         <summary>下划线</summary>
         <summary>利用 background-image 实现</summary>
         <hgroup class="underline">
@@ -454,6 +459,7 @@
     <!-- stripe 渐变实现条纹背景图案 -->
     <section class="code-wrap cf">
       <div class="css-live-wrap">
+        <div class="star" title="致敬《CSS SECRET》作者，此实例是书中例子"></div>
         <summary>条纹背景图</summary>
         <summary>利用渐变实现</summary>
         <hgroup class="stripe">
@@ -471,7 +477,126 @@
           font-size: 200%;
           background:deeppink;
           border-radius:.5em;
-          background:repeating-linear-gradient(45deg,deeppink, deeppink 15px, #03A9F4 0, #03A9F4 30px)
+          background:repeating-linear-gradient(45deg,#CC9999, #CC9999 15px, #CCCCCC 0, #CCCCCC 30px)
+        }
+      </style>
+    </section>
+
+    <!-- stripe 渐变实现条纹背景图案 -->
+    <section class="code-wrap cf">
+      <div class="css-live-wrap">
+        <summary>条纹背景图</summary>
+        <summary>利用渐变实现</summary>
+        <hgroup class="wave-stripe">
+          <h1>.wave-stripe</h1>
+        </hgroup>
+      </div>
+      <style class="code" contenteditable=true>
+        .wave-stripe{
+          position: absolute;
+          top:50%;left: 50%;
+          transform:translate(-50%,-50%);
+          width: 200px;line-height:200px;
+          text-align: center;
+          color: #333;
+          font-size: 200%;
+          border-radius:.5em;
+          background:
+          linear-gradient(135deg, deeppink 25%, transparent 25%) -50px 0,
+          linear-gradient(225deg, deeppink 25%, transparent 25%) -50px 0,
+          linear-gradient(315deg, deeppink 25%, transparent 25%),
+          linear-gradient(45deg, deeppink 25%, transparent 25%);
+          background-size: 40px 40px;
+        }
+      </style>
+    </section>
+
+    <!-- stripe 渐变实现条纹背景图案 -->
+    <section class="code-wrap cf">
+      <div class="css-live-wrap">
+        <summary>条纹背景图</summary>
+        <summary>利用渐变实现</summary>
+        <hgroup class="arrow-stripe">
+          <h1>.arrow-stripe</h1>
+        </hgroup>
+      </div>
+      <style class="code" contenteditable=true>
+        .arrow-stripe{
+          position: absolute;
+          top:50%;left: 50%;
+          transform:translate(-50%,-50%);
+          width: 200px;line-height:200px;
+          text-align: center;
+          color: #333;
+          font-size: 200%;
+          border-radius:.5em;
+          background:
+          linear-gradient(45deg, #92baac 45px, transparent 45px)64px 64px,
+          linear-gradient(45deg, #92baac 45px, transparent 45px,transparent 91px, #e1ebbd 91px, #e1ebbd 135px, transparent 135px),
+          linear-gradient(-45deg, #92baac 23px, transparent 23px, transparent 68px,#92baac 68px,#92baac 113px,transparent 113px,transparent 158px,#92baac 158px);
+          background-color:#e1ebbd;
+          background-size: 128px 128px;
+        }
+      </style>
+    </section>
+
+    <!-- stripe 渐变实现条纹背景图案 -->
+    <section class="code-wrap cf">
+      <div class="css-live-wrap">
+        <summary>混合模式背景图</summary>
+        <summary>利用渐变实现</summary>
+        <hgroup class="colorful-stripe">
+          <h1>.colorful-stripe</h1>
+        </hgroup>
+      </div>
+      <style class="code" contenteditable=true>
+        .colorful-stripe {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          width: 300px;
+          line-height: 200px;
+          text-align: center;
+          color: #fff;
+          font-size: 200%;
+          border-radius: .5em;
+          background:
+          linear-gradient(limegreen, transparent), linear-gradient(90deg, skyblue, transparent), linear-gradient(-90deg, coral, transparent);
+          background-blend-mode: screen;
+        }
+      </style>
+    </section>
+
+    <!-- stripe 渐变实现随机背景图案 -->
+    <section class="code-wrap cf">
+      <div class="css-live-wrap">
+        <div class="star" title="致敬《CSS SECRET》作者，此实例是书中例子"></div>
+        <summary>随机背景图</summary>
+        <summary>利用渐变、蝉随机实现</summary>
+        <hgroup class="random-stripe">
+          <h1>.random-stripe</h1>
+        </hgroup>
+      </div>
+      <style class="code" contenteditable=true>
+        .random-stripe {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          width: 300px;
+          line-height: 200px;
+          text-align: center;
+          color: #fff;
+          font-size: 200%;
+          border-radius: .5em;
+          background: hsl(20, 40%, 90%);
+          background-image:
+          linear-gradient(90deg, #663366 11px, transparent 0),
+          linear-gradient(90deg, #CCCCCC 23px, transparent 0),
+          linear-gradient(90deg, #CC99CC 41px, transparent 0),
+          linear-gradient(90deg, #ff9933 53px, transparent 0);
+          background-size: 59px 100%, 61px 100%, 83px 100%, 103px 100%;
         }
       </style>
     </section>
