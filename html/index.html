@@ -600,6 +600,64 @@
         }
       </style>
     </section>
+
+    <!-- stripe 渐变实现随机背景图案 -->
+    <section class="code-wrap cf">
+      <div class="css-live-wrap">
+        <summary>五角星</summary>
+        <summary>利用border、transparent、旋转实现</summary>
+        <hgroup class="five-star">
+          <h1></h1>
+        </hgroup>
+      </div>
+      <style class="code" contenteditable=true>
+        .five-star{
+          position: absolute;
+          top: 35%;
+          right: 50%;
+          transform: translate(-50%, -50%);
+          width: 0;
+          height: 0;
+          display: block;
+          border-left: 3.04px solid transparent;
+          border-right: 3.24px solid transparent;
+          border-bottom: 10px solid #98DBE3;
+          -webkit-filter: drop-shadow(1px .5px 1px #ccc); 
+          cursor: pointer;
+          transform:scale(8);
+        }
+        .five-star:before{
+            content: "";
+            position: absolute;
+            top: 8.65px;
+            left: -8.82px;
+            width: 0;
+            height: 0;
+            color: #98DBE3;
+            display: block;
+            border-left: 12.5px solid transparent;
+            border-right: 12.5px solid transparent;
+            border-bottom: 9.08px solid #98DBE3;
+            transform-origin: top center;
+            transform: rotate(36deg);
+        }
+        .five-star:after{
+            content: "";
+            position: absolute;
+            top: 8.65px;
+            left: -15px;
+            width: 0;
+            height: 0;
+            color: #98DBE3;
+            display: block;
+            border-left: 12.5px solid transparent;
+            border-right: 12.5px solid transparent;
+            border-bottom: 9.08px solid #98DBE3;
+            transform-origin: top center;
+            transform: rotate(-36deg);
+        }
+      </style>
+    </section>    
   </div>
 </body>
 </html>
