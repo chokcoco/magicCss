@@ -311,41 +311,6 @@
       </style>
     </section>
 
-    <!-- blur 伪类、滤镜实现毛玻璃效果 -->
-<!--     <section class="code-wrap cf">
-      <div class="css-live-wrap" style="background: url(../static/images/exp.jpg) no-repeat center center; background-size:60% 60%;">
-        <summary>毛玻璃</summary>
-        <summary>利用伪类、滤镜实现</summary>
-        <hgroup class="blur">
-          <h1>.blur</h1>
-        </hgroup>
-      </div>
-      <style class="code" contenteditable=true>
-        .blur{
-          position: absolute;
-          top:50%;left: 50%;
-          transform:translate(-50%,-50%);
-          width: 200px;line-height:200px;
-          text-align: center;
-          color: white;
-          font-size: 200%;
-          overflow:hidden;
-          background: hsla(0,0%,100%,.3);
-        }
-        .blur:before{
-          background: url(../static/images/exp.jpg) 0 / cover fixed;
-        }
-        .blur:before{
-          content: '';
-          position: absolute;
-          top: 0; right: 0; bottom: 0; left: 0;
-          -webkit-filter: blur(20px);
-          filter: blur(20px);
-        }
-
-      </style>
-    </section> -->
-
     <!-- corner 切角、伪类、渐变、旋转实现折角 -->
     <section class="code-wrap cf">
       <div class="css-live-wrap">
@@ -601,7 +566,7 @@
       </style>
     </section>
 
-    <!-- stripe 渐变实现随机背景图案 -->
+    <!-- five-star 利用border、transparent、旋转实现 -->
     <section class="code-wrap cf">
       <div class="css-live-wrap">
         <summary>五角星</summary>
@@ -658,6 +623,213 @@
         }
       </style>
     </section>    
+
+    <!-- sun 线性渐变、阴影、旋转实现晴天天气图案 -->
+    <section class="code-wrap cf">
+      <div class="css-live-wrap">
+        <summary>晴天（sun）</summary>
+        <summary>利用线性渐变、阴影、旋转实现</summary>
+        <hgroup class="sun">
+          <h1>.sun</h1>
+        </hgroup>
+      </div>
+      <style class="code" contenteditable=true>
+        .sun{
+          position: absolute;
+          top: 50%;left: 50%;
+          width:200px;height:260px;
+          transform: translate(-50%, -50%);
+          text-align:center;
+          font-size:200%;
+          color:#fff;
+          background:#0BF;
+          border-radius:5px;
+        }
+        .sun:before{
+          content:"";
+          position: absolute;
+          width: 80px;height: 80px;
+          left: 50%;top: 50%;
+          transform: translate(-50%, -50%);
+          border-radius:50%;
+          background:rgba(255, 238, 68, 1);
+          box-shadow: 0 0 0 15px rgba(255,255,0,0.2),0 0 15px #fff;
+          z-index:-10;
+        }
+        .sun:after{
+          content:"";
+          position: absolute;
+          top: 50%;left: 50%;
+          height: 160px;
+          width: 160px; 
+          transform: translate(-50%, -50%) rotate(30deg);
+          z-index:-100;
+          background-image: 
+          -webkit-linear-gradient(top,rgba(255,255,255,0) 0%, rgba(255,255,255,0.8) 50%, rgba(255,255,255,0) 100%), 
+          -webkit-linear-gradient(left,rgba(255,255,255,0) 0%, rgba(255,255,255,0.8) 50%, rgba(255,255,255,0) 100%);
+          background-size: 20px 100%, 100% 20px;
+          background-repeat: no-repeat;
+          background-position: center center, center center;
+          animation:sunRotate 10s linear infinite;
+        }
+        @keyframes sunRotate{
+          0%{
+            transform: translate(-50%, -50%) rotate(30deg);
+          }
+          100%{
+            transform: translate(-50%, -50%) rotate(390deg);  
+          }
+        }
+      </style>
+    </section>     
+
+    <!-- sun 线性渐变、阴影、缩放实现多云天气图案 -->
+    <section class="code-wrap cf">
+      <div class="css-live-wrap">
+        <summary>多云(cloudy)</summary>
+        <summary>利用线性渐变、阴影、缩放实现</summary>
+        <hgroup class="cloudy">
+          <h1>.cloudy</h1>
+        </hgroup>
+      </div>
+      <style class="code" contenteditable=true>
+        .cloudy{
+          position: absolute;
+          top: 50%;left: 50%;
+          width:200px;height:260px;
+          transform: translate(-50%, -50%);
+          text-align:center;
+          font-size:200%;
+          color:#fff;
+          background:#2EB5E5;
+          border-radius:5px;
+        }
+        .cloudy:before {
+          content: "";
+          text-indent:23px;
+          font-size:22px;
+          line-height:40px;
+          color:#333;
+          position: absolute;
+          height: 50px;width: 50px;
+          background: #FFFFFF;
+          left:30%;
+          top:40%;
+          transform: translate(-50%, -50%);
+          border-radius: 50%;
+          box-shadow: 
+            #FFFFFF 65px -15px 0 -5px, 
+            #FFFFFF 25px -25px, 
+            #FFFFFF 30px 10px, 
+            #FFFFFF 60px 15px 0 -10px, 
+            #FFFFFF 85px 5px 0 -5px;
+          animation: cloudy 5s ease-in-out infinite;  
+        }
+        .cloudy:after{
+          content:"";
+          position: absolute;
+          top: 80%;left: 50%;
+          height: 15px;
+          width: 120px; 
+          background:rgba(0,0,0,.5);
+          border-radius: 50%;
+          transform: translate(-50%, -50%);
+          animation: cloudy_shadow 5s ease-in-out infinite;  
+        }
+      @keyframes cloudy {
+        50%{
+          transform: translate(-50%, -70%);
+        }
+        100%{
+          transform: translate(-50%, -50%);
+        }
+      }
+      @keyframes cloudy_shadow {
+        50%{
+          transform: translate(-50%, -50%) scale(0.8);
+          background:rgba(0,0,0,.2);
+        }
+        100%{
+          transform: translate(-50%, -50%) scale(1);
+            background:rgba(0,0,0,.5);
+        }
+      }      
+      </style>
+    </section>      
+
+    <!-- sun 线性渐变、阴影、缩放实现多云天气图案 -->
+    <section class="code-wrap cf">
+      <div class="css-live-wrap">
+        <summary>雨(rainy)</summary>
+        <summary>利用线性渐变、阴影、缩放实现</summary>
+        <hgroup class="rainy">
+          <h1>.rainy</h1>
+        </hgroup>
+      </div>
+      <style class="code" contenteditable=true>
+        .rainy{
+          position: absolute;
+          top: 50%;left: 50%;
+          width:200px;height:260px;
+          transform: translate(-50%, -50%);
+          text-align:center;
+          font-size:200%;
+          color:#fff;
+          background:#E6E6E6;
+          border-radius:5px;
+        }
+        .rainy:before {
+          content: "";
+          text-indent:23px;
+          font-size:22px;
+          line-height:40px;
+          color:#333;
+          position: absolute;
+          height: 50px;width: 50px;
+          background: #CCC;
+          left:30%;
+          top:40%;
+          transform: translate(-50%, -50%);
+          border-radius: 50%;
+          box-shadow: 
+            #CCC 65px -15px 0 -5px, 
+            #CCC 25px -25px, 
+            #CCC 30px 10px, 
+            #CCC 60px 15px 0 -10px, 
+            #CCC 85px 5px 0 -5px;
+          animation: cloudy 5s ease-in-out infinite;  
+        }
+        .rainy:after{
+          content:"";
+          position: absolute;
+          top: 80%;left: 50%;
+          height: 15px;
+          width: 120px; 
+          background:rgba(0,0,0,.5);
+          border-radius: 50%;
+          transform: translate(-50%, -50%);
+          animation: cloudy_shadow 5s ease-in-out infinite;  
+        }
+      @keyframes cloudy {
+        50%{
+          transform: translate(-50%, -70%);
+        }
+        100%{
+          transform: translate(-50%, -50%);
+        }
+      }
+      @keyframes cloudy_shadow {
+        50%{
+          transform: translate(-50%, -50%) scale(0.8);
+          background:rgba(0,0,0,.2);
+        }
+        100%{
+          transform: translate(-50%, -50%) scale(1);
+            background:rgba(0,0,0,.5);
+        }
+      }     
+      </style>
+    </section>            
   </div>
 </body>
 </html>
