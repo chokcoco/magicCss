@@ -587,7 +587,7 @@
           border-left: 3.04px solid transparent;
           border-right: 3.24px solid transparent;
           border-bottom: 10px solid #98DBE3;
-          -webkit-filter: drop-shadow(1px .5px 1px #ccc); 
+          -webkit-filter: drop-shadow(1px .5px 1px #ccc);
           cursor: pointer;
           transform:scale(8);
         }
@@ -622,7 +622,7 @@
             transform: rotate(-36deg);
         }
       </style>
-    </section>    
+    </section>
 
     <!-- sun 线性渐变、阴影、旋转实现晴天天气图案 -->
     <section class="code-wrap cf">
@@ -661,11 +661,11 @@
           position: absolute;
           top: 50%;left: 50%;
           height: 160px;
-          width: 160px; 
+          width: 160px;
           transform: translate(-50%, -50%) rotate(30deg);
           z-index:-100;
-          background-image: 
-          -webkit-linear-gradient(top,rgba(255,255,255,0) 0%, rgba(255,255,255,0.8) 50%, rgba(255,255,255,0) 100%), 
+          background-image:
+          -webkit-linear-gradient(top,rgba(255,255,255,0) 0%, rgba(255,255,255,0.8) 50%, rgba(255,255,255,0) 100%),
           -webkit-linear-gradient(left,rgba(255,255,255,0) 0%, rgba(255,255,255,0.8) 50%, rgba(255,255,255,0) 100%);
           background-size: 20px 100%, 100% 20px;
           background-repeat: no-repeat;
@@ -677,13 +677,13 @@
             transform: translate(-50%, -50%) rotate(30deg);
           }
           100%{
-            transform: translate(-50%, -50%) rotate(390deg);  
+            transform: translate(-50%, -50%) rotate(390deg);
           }
         }
       </style>
-    </section>     
+    </section>
 
-    <!-- sun 线性渐变、阴影、缩放实现多云天气图案 -->
+    <!-- cloudy 阴影实现多云天气图案 -->
     <section class="code-wrap cf">
       <div class="css-live-wrap">
         <summary>多云(cloudy)</summary>
@@ -717,24 +717,24 @@
           top:40%;
           transform: translate(-50%, -50%);
           border-radius: 50%;
-          box-shadow: 
-            #FFFFFF 65px -15px 0 -5px, 
-            #FFFFFF 25px -25px, 
-            #FFFFFF 30px 10px, 
-            #FFFFFF 60px 15px 0 -10px, 
+          box-shadow:
+            #FFFFFF 65px -15px 0 -5px,
+            #FFFFFF 25px -25px,
+            #FFFFFF 30px 10px,
+            #FFFFFF 60px 15px 0 -10px,
             #FFFFFF 85px 5px 0 -5px;
-          animation: cloudy 5s ease-in-out infinite;  
+          animation: cloudy 5s ease-in-out infinite;
         }
         .cloudy:after{
           content:"";
           position: absolute;
           top: 80%;left: 50%;
           height: 15px;
-          width: 120px; 
+          width: 120px;
           background:rgba(0,0,0,.5);
           border-radius: 50%;
           transform: translate(-50%, -50%);
-          animation: cloudy_shadow 5s ease-in-out infinite;  
+          animation: cloudy_shadow 5s ease-in-out infinite;
         }
       @keyframes cloudy {
         50%{
@@ -753,21 +753,129 @@
           transform: translate(-50%, -50%) scale(1);
             background:rgba(0,0,0,.5);
         }
-      }      
+      }
       </style>
-    </section>      
+    </section>
 
-    <!-- sun 线性渐变、阴影、缩放实现多云天气图案 -->
+    <!-- rainy 阴影实现多云天气图案 -->
     <section class="code-wrap cf">
       <div class="css-live-wrap">
         <summary>雨(rainy)</summary>
         <summary>利用线性渐变、阴影、缩放实现</summary>
-        <hgroup class="rainy">
+        <hgroup class="rainy-container">
           <h1>.rainy</h1>
+          <div class="rainy"></div>
         </hgroup>
       </div>
       <style class="code" contenteditable=true>
-        .rainy{
+        .rainy-container {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          width: 200px;
+          height: 260px;
+          transform: translate(-50%, -50%);
+          text-align: center;
+          font-size: 200%;
+          color: #fff;
+          background: #E6E6E6;
+          border-radius: 5px;
+        }
+        .rainy {
+          position: absolute;
+          width: 3px;
+          height: 6px;
+          top: 30%;
+          left: 50%;
+          background: #CCCCCC;
+          border-radius: 50%;
+          animation: rainy_rain .7s infinite linear;
+        }
+        .rainy:before {
+          content: "";
+          color: #333;
+          position: absolute;
+          height: 50px;
+          width: 50px;
+          top: 30px;
+          left: -40px;
+          background: #CCC;
+          transform: translate(-50%, -50%);
+          border-radius: 50%;
+          box-shadow: #CCC 65px -15px 0 -5px, #CCC 25px -25px, #CCC 30px 10px, #CCC 60px 15px 0 -10px, #CCC 85px 5px 0 -5px;
+          animation: cloudy 5s ease-in-out infinite;
+        }
+        .rainy:after {
+          content: "";
+          position: absolute;
+          top: 120px;
+          left: 50%;
+          height: 15px;
+          width: 120px;
+          background: rgba(0, 0, 0, .5);
+          border-radius: 50%;
+          transform: translate(-50%, -50%);
+          animation: cloudy_shadow 5s ease-in-out infinite;
+        }
+        @keyframes cloudy {
+          50% {
+            transform: translate(-50%, -70%);
+          }
+          100% {
+            transform: translate(-50%, -50%);
+          }
+        }
+        @keyframes cloudy_shadow {
+          50% {
+            transform: translate(-50%, -50%) scale(0.8);
+            background: rgba(0, 0, 0, .2);
+          }
+          100% {
+            transform: translate(-50%, -50%) scale(1);
+            background: rgba(0, 0, 0, .5);
+          }
+        }
+        @keyframes rainy_rain {
+          0% {
+            box-shadow: rgba(0, 0, 0, 0) -10px 30px, rgba(0, 0, 0, 0) 40px 40px, rgba(0, 0, 0, .3) -50px 75px, rgba(0, 0, 0, .3) 55px 50px, rgba(0, 0, 0, .3) -18px 100px, rgba(0, 0, 0, .3) 12px 95px, rgba(0, 0, 0, .3) -31px 45px, rgba(0, 0, 0, .3) 30px 35px;
+          }
+          25% {
+            box-shadow: rgba(0, 0, 0, .3) -10px 45px, rgba(0, 0, 0, .3) 40px 60px, rgba(0, 0, 0, .3) -50px 90px, rgba(0, 0, 0, .3) 55px 65px, rgba(0, 0, 0, 0) -18px 120px, rgba(0, 0, 0, 0) 12px 120px, rgba(0, 0, 0, .3) -31px 70px, rgba(0, 0, 0, .3) 30px 60px;
+          }
+          26% {
+            box-shadow: rgba(0, 0, 0, .3) -10px 45px, rgba(0, 0, 0, .3) 40px 60px, rgba(0, 0, 0, .3) -50px 90px, rgba(0, 0, 0, .3) 55px 65px, rgba(0, 0, 0, 0) -18px 40px, rgba(0, 0, 0, 0) 12px 20px, rgba(0, 0, 0, .3) -31px 70px, rgba(0, 0, 0, .3) 30px 60px;
+          }
+          50% {
+            box-shadow: rgba(0, 0, 0, .3) -10px 70px, rgba(0, 0, 0, .3) 40px 80px, rgba(0, 0, 0, 0) -50px 100px, rgba(0, 0, 0, .3) 55px 80px, rgba(0, 0, 0, .3) -18px 60px, rgba(0, 0, 0, .3) 12px 45px, rgba(0, 0, 0, .3) -31px 95px, rgba(0, 0, 0, .3) 30px 85px;
+          }
+          51% {
+            box-shadow: rgba(0, 0, 0, .3) -10px 70px, rgba(0, 0, 0, .3) 40px 80px, rgba(0, 0, 0, 0) -50px 45px, rgba(0, 0, 0, .3) 55px 80px, rgba(0, 0, 0, .3) -18px 60px, rgba(0, 0, 0, .3) 12px 45px, rgba(0, 0, 0, .3) -31px 95px, rgba(0, 0, 0, .3) 30px 85px;
+          }
+          75% {
+            box-shadow: rgba(0, 0, 0, .3) -10px 95px, rgba(0, 0, 0, .3) 40px 100px, rgba(0, 0, 0, .3) -50px 60px, rgba(0, 0, 0, 0) 55px 95px, rgba(0, 0, 0, .3) -18px 80px, rgba(0, 0, 0, .3) 12px 70px, rgba(0, 0, 0, 0) -31px 120px, rgba(0, 0, 0, 0) 30px 110px;
+          }
+          76% {
+            box-shadow: rgba(0, 0, 0, .3) -10px 95px, rgba(0, 0, 0, .3) 40px 100px, rgba(0, 0, 0, .3) -50px 60px, rgba(0, 0, 0, 0) 55px 35px, rgba(0, 0, 0, .3) -18px 80px, rgba(0, 0, 0, .3) 12px 70px, rgba(0, 0, 0, 0) -31px 25px, rgba(0, 0, 0, 0) 30px 15px;
+          }
+          100% {
+            box-shadow: rgba(0, 0, 0, 0) -10px 120px, rgba(0, 0, 0, 0) 40px 120px, rgba(0, 0, 0, .3) -50px 75px, rgba(0, 0, 0, .3) 55px 50px, rgba(0, 0, 0, .3) -18px 100px, rgba(0, 0, 0, .3) 12px 95px, rgba(0, 0, 0, .3) -31px 45px, rgba(0, 0, 0, .3) 30px 35px;
+          }
+        }
+      </style>
+    </section>
+
+    <!-- breeze 利用border、transparent、实现微风天气图案 -->
+    <section class="code-wrap cf">
+      <div class="css-live-wrap">
+        <summary>微风(breeze)</summary>
+        <summary>利用border、transparent、实现</summary>
+        <hgroup class="breeze-container">
+          <h1>.breeze</h1>
+          <div class="breeze"></div>
+        </hgroup>
+      </div>
+      <style class="code" contenteditable=true>
+        .breeze-container{
           position: absolute;
           top: 50%;left: 50%;
           width:200px;height:260px;
@@ -775,61 +883,307 @@
           text-align:center;
           font-size:200%;
           color:#fff;
-          background:#E6E6E6;
+          background:#00BBFF;
           border-radius:5px;
         }
-        .rainy:before {
-          content: "";
-          text-indent:23px;
-          font-size:22px;
-          line-height:40px;
-          color:#333;
-          position: absolute;
-          height: 50px;width: 50px;
-          background: #CCC;
-          left:30%;
-          top:40%;
-          transform: translate(-50%, -50%);
-          border-radius: 50%;
-          box-shadow: 
-            #CCC 65px -15px 0 -5px, 
-            #CCC 25px -25px, 
-            #CCC 30px 10px, 
-            #CCC 60px 15px 0 -10px, 
-            #CCC 85px 5px 0 -5px;
-          animation: cloudy 5s ease-in-out infinite;  
-        }
-        .rainy:after{
+        .breeze-container:after{
           content:"";
+          position:absolute;
+          top:58%;
+          left:50%;
+          transform: translate(-50%, -50%);
+          width:6px;
+          height:70px;
+          background:#fff;
+        }
+        .breeze{
+          position:absolute;
+          top: 30%;
+          left: 50%;
+          transform: translate(-50%, -50%) rotate(1deg);
+          border-bottom:60px solid #fff;
+          border-left:5px solid transparent;
+          border-right:5px solid transparent;
+          animation: windmill 12s infinite linear;
+          transform-origin:50.5% 62px;
+        }
+        .breeze:before{
+          position:absolute;
+          top: 75px;left: -59px;
+          content:"";
+          border-right:60px solid #fff;
+          border-top:5px solid transparent;
+          border-bottom:5px solid transparent;
+          transform:rotate(-30deg);
+        }
+        .breeze:after{
+          position:absolute;
+          top: 75px;left: -1px;
+          content:"";
+          border-left:60px solid #fff;
+          border-top:5px solid transparent;
+          border-bottom:5px solid transparent;
+          transform:rotate(30deg);
+        }
+        @keyframes windmill{
+          0%{
+            transform: translate(-50%, -50%) rotate(0deg);
+          }
+          100%{
+            transform: translate(-50%, -50%) rotate(360deg);
+          }
+        }
+      </style>
+    </section>
+
+    <!-- rainbow 利用border、box-shadow 实现彩虹天气图案 -->
+    <section class="code-wrap cf">
+      <div class="css-live-wrap">
+        <summary>彩虹(rainbow)</summary>
+        <summary>利用border、box-shadow 实现</summary>
+        <hgroup class="rainbow-container">
+          <h1>.rainbow</h1>
+          <div class="rainbow"></div>
+        </hgroup>
+      </div>
+      <style class="code" contenteditable=true>
+        .rainbow-container{
           position: absolute;
-          top: 80%;left: 50%;
+          top: 50%;left: 50%;
+          width:200px;height:260px;
+          transform: translate(-50%, -50%);
+          text-align:center;
+          font-size:200%;
+          color:#fff;
+          background:#F3D166;
+          border-radius:5px;
+        }
+        .rainbow{
+          position:absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          height: 1px;width: 1px;
+        }
+        .rainbow:before{
+          content:"";
+          position:absolute;
+          top: 50%;left: 50%;
+          transform: translate(-50%, -50%) rotate(45deg);
+          height: 70px;width: 70px;
+          border-radius: 100px 0 0 0;
+          box-shadow:
+            #F44336 -2px -2px 0 1px,
+            #FF9800 -4px -4px 0 3px,
+            #FFEB3B -6px -6px 0 5px,
+            #8BC34A -8px -8px 0 7px,
+            #00BCD4 -10px -10px 0 9px,
+            #2196F3 -12px -12px 0 11px,
+            #9C27B0 -14px -14px 0 13px;
+          animation: rainbow 5s ease-in-out infinite;
+        }
+        .rainbow:after{
+          content: "";
+          position: absolute;
+          top: 70px;
+          left: 50%;
           height: 15px;
-          width: 120px; 
-          background:rgba(0,0,0,.5);
+          width: 120px;
+          background: rgba(0, 0, 0, .5);
           border-radius: 50%;
           transform: translate(-50%, -50%);
-          animation: cloudy_shadow 5s ease-in-out infinite;  
+          animation: cloudy_shadow 5s ease-in-out infinite;
         }
-      @keyframes cloudy {
-        50%{
-          transform: translate(-50%, -70%);
+        @keyframes rainbow {
+          50% {
+            transform: translate(-50%, -55%) rotate(30deg);
+          }
+          100% {
+            transform: translate(-50%, -50%) rotate(45deg);
+          }
         }
-        100%{
-          transform: translate(-50%, -50%);
+        @keyframes cloudy_shadow {
+          50% {
+            transform: translate(-50%, -50%) scale(0.8);
+            background: rgba(0, 0, 0, .2);
+          }
+          100% {
+            transform: translate(-50%, -50%) scale(1);
+            background: rgba(0, 0, 0, .5);
+          }
         }
-      }
-      @keyframes cloudy_shadow {
-        50%{
-          transform: translate(-50%, -50%) scale(0.8);
-          background:rgba(0,0,0,.2);
-        }
-        100%{
-          transform: translate(-50%, -50%) scale(1);
-            background:rgba(0,0,0,.5);
-        }
-      }     
       </style>
-    </section>            
+    </section>
+
+    <!-- starry 利用 box-shadow 实现彩虹天气图案 -->
+    <section class="code-wrap cf">
+      <div class="css-live-wrap">
+        <summary>夜空璀璨(starry)</summary>
+        <summary>利用 box-shadow 实现</summary>
+        <hgroup class="starry-container">
+          <h1>.starry</h1>
+          <div class="starry"></div>
+        </hgroup>
+      </div>
+      <style class="code" contenteditable=true>
+        .starry-container{
+          position: absolute;
+          top: 50%;left: 50%;
+          width:200px;height:260px;
+          transform: translate(-50%, -50%);
+          text-align:center;
+          font-size:200%;
+          color:#fff;
+          background:#222233;
+          border-radius:5px;
+        }
+        .starry{
+          position:absolute;
+          top: 30%;left: 40%;
+          transform: translate(-50%, -50%);
+          height: 4px;width: 4px;
+          border-radius:50%;
+          box-shadow:
+            #FFFFFF -26px 77px 0 -1px,
+            rgba(255,255,255,0.1) -36px 59px 0 -1px,
+            rgba(255,255,255,0.1) -28px 89px 0 -1px,
+            #FFFFFF -35px 20px 0 -1px,
+            #FFFFFF 14px 100px,
+            rgba(255,255,255,0.1) 41px 60px,
+            #FFFFFF 34px 39px,
+            rgba(255,255,255,0.1) 14px 45px 0 -1px,
+            #FFFFFF 64px 12px 0 -1px,
+            rgba(255,255,255,0.1) 32px 96px 0 -1px,
+            #FFFFFF 64px 71px,
+            rgba(255,255,255,0.1) 60px 18px 0 -1px,
+            #FFFFFF 34px 9px,
+            rgba(255,255,255,0.1) -26px 55px 0 -1px;
+          animation: starry_star 5s ease-in-out infinite;
+        }
+        .starry:before{
+          content:"";
+          position:absolute;
+          top: 20%;left: 50%;
+          width:100px;height:100px;
+          box-shadow: #FFFFFF -25px 0;
+          transform: rotate(-5deg);
+          border-radius: 50%;
+          animation: starry 5s ease-in-out infinite;
+        }
+        @keyframes starry {
+          50% {
+            transform: rotate(10deg);
+          }
+        }
+        @keyframes starry_star{
+          50%{
+            box-shadow:
+              rgba(255,255,255,0.1) -26px 77px 0 -1px,
+              #FFF -36px 59px 0 -1px,
+              #FFF -28px 89px 0 -1px,
+              rgba(255,255,255,0.1) -35px 20px 0 -1px,
+              rgba(255,255,255,0.1) 14px 100px,
+              #FFF 41px 60px,
+              rgba(255,255,255,0.1) 34px 39px,
+              #FFF 14px 45px 0 -1px,
+              rgba(255,255,255,0.1) 64px 12px 0 -1px,
+              #FFF 32px 96px 0 -1px,
+              rgba(255,255,255,0.1) 64px 71px,
+              #FFF 60px 18px 0 -1px,
+              rgba(255,255,255,0.1) 34px 9px,
+              #FFF -26px 55px 0 -1px;
+            }
+        }
+      </style>
+    </section>
+
+    <!-- thunder 阴影、border实现雷电天气图案 -->
+    <section class="code-wrap cf">
+      <div class="css-live-wrap">
+        <summary>多云(thunder)</summary>
+        <summary>利用阴影、border实现</summary>
+        <hgroup class="thunder-container">
+          <h1>.thunder</h1>
+          <div class="thunder"></div>
+        </hgroup>
+      </div>
+      <style class="code" contenteditable=true>
+        .thunder-container {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          width: 200px;
+          height: 260px;
+          transform: translate(-50%, -50%);
+          text-align: center;
+          font-size: 200%;
+          color: #fff;
+          background: #444;
+          border-radius: 5px;
+        }
+        .thunder {
+          color: #333;
+          position: absolute;
+          height: 50px;
+          width: 50px;
+          top: 40%;
+          left: 30%;
+          background: #222;
+          transform: translate(-50%, -50%);
+          border-radius: 50%;
+          box-shadow:
+            #222 65px -15px 0 -5px,
+            #222 25px -25px,
+            #222 30px 10px,
+            #222 60px 15px 0 -10px,
+            #222 85px 5px 0 -5px;
+          animation: cloudy 5s ease-in-out infinite;
+        }
+        .thunder:before {
+          content: "";
+          position: absolute;
+          top: 60px;
+          left: 60px;
+          border-left: 0px solid transparent;
+          border-right: 8px solid transparent;
+          border-top: 38px solid yellow;
+          box-shadow: yellow -7px -32px;
+          transform:rotate(30deg);
+          transform-origin:center -50px;
+          animation:stormy_thunder 2s steps(1, end) infinite;;
+        }
+        .thunder:after {
+          content: "";
+          position: absolute;
+          top: 120px;
+          left: 64px;
+          height: 15px;
+          width: 120px;
+          background: rgba(0, 0, 0, .5);
+          border-radius: 50%;
+          z-index:-1;
+          transform: translate(-50%, -50%);
+          animation: cloudy_shadow 5s ease-in-out infinite;
+        }
+        @keyframes cloudy {
+          50% {
+            transform: translate(-50%, -30px);
+          }
+        }
+        @keyframes cloudy_shadow {
+          50% {
+            transform: translate(-50%, 0) scale(0.8);
+            background: rgba(0, 0, 0, .2);
+          }
+        }
+        @keyframes stormy_thunder{
+          0%  {  transform: rotate(30deg); opacity:1; }
+          5%  {  transform: rotate(-34deg); opacity:1; }
+          10% {  transform: rotate(0deg); opacity:1; }
+          15% {  transform: rotate(-34deg); opacity:0; }
+        }
+      </style>
+    </section>
   </div>
 </body>
 </html>
