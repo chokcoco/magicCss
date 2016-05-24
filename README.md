@@ -1,6 +1,8 @@
-# magicCss
+# magicCss 
 
 CSS3奇思妙想，使用CSS3实现各类图形。
+
+除去一些需要背景衬托的图形，本项目中所有图形均为单标签图形，即使用一个 div 完成。
 
 [Demo](http://chokcoco.github.io/magicCss/html/index.html)
 
