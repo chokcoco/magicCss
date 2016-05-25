@@ -94,10 +94,15 @@ summary{
   background-position: -400px bottom;
   transition:.5s;
 }
+
 summary:nth-child(2){
 	margin-top:60px;
 }
 
 summary:hover{
 	background-position: -0em bottom;
+}
+.inline-element::after{
+	content: "\A";
+	white-space: pre;
 }
