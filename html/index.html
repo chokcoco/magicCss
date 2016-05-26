@@ -1,0 +1,1730 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta content="CSS3Secret,CSS3解密,CSS3奇淫巧计,CSS3妙用,CSS3图形" name="Keywords">
+    <meta content="使用CSS3实现各类图形" name="description">
+    <title>CSS3奇思妙想</title>
+    <link rel="stylesheet" type="text/css" href="../static/css/reset.css">
+    <link rel="stylesheet" type="text/css" href="../static/css/index.css">
+</head>
+<body>
+  <h1 style="height: 0;overflow: hidden;">CSS3奇思妙想，使用CSS3实现各类图形</h1>
+  <a style="width:149px;height:149px;position:fixed;top:0;right:0;z-index:9999;" href="https://github.com/chokcoco/magicCss" target="_blank">
+    <img src="http://chokcoco.github.io/demo/curveJS/images/forkme.png">
+  </a>
+  <div class="container">
+    <!-- bubbly 气泡三角形-->
+    <section id="bubbly" class="code-wrap cf">
+      <div class="css-live-wrap">
+        <summary>气泡三角形</summary>
+        <summary>利用 border 的 transparent 特性实现</summary>
+        <hgroup class="bubbly">
+          <h1>.bubbly</h1>
+        </hgroup>
+      </div>
+      <style class="code" contenteditable=true>
+        .bubbly {
+          position: absolute;
+          top:50%;
+          left: 50%;
+          transform:translate(-50%,-50%);
+          background: #00aabb;
+          border-radius: .4em;
+          width: 260px;
+          padding: 60px 20px;
+          text-align: center;
+          color: white;
+          font-size: 200%;
+        }
+        .bubbly:after {
+          content: '';
+          position: absolute;
+          bottom: 0;
+          left: 50%;
+          border: 34px solid transparent;
+          border-top-color: #00aabb;
+          border-bottom: 0;
+          border-left: 0;
+          margin: 0 0 -34px -17px;
+        }
+      </style>
+    </section>
+
+    <!-- notching 切角 -->
+    <section id="notching" class="code-wrap cf">
+      <div class="css-live-wrap">
+        <div class="star" title="致敬《CSS SECRET》作者，此实例是书中例子"></div>
+        <summary>切角</summary>
+        <summary>使用线性渐变实现</summary>
+        <hgroup class="notching">
+          <h1>.notching</h1>
+        </hgroup>
+      </div>
+      <style class="code" contenteditable=true>
+        .notching{
+          position: absolute;
+          top:50%;
+          left: 50%;
+          transform:translate(-50%,-50%);
+          width: 160px;
+          padding: 60px 20px;
+          text-align: center;
+          color: white;
+          font-size: 200%;
+        }
+        .notching{
+          background:
+          linear-gradient(135deg, transparent 15px, deeppink 0)
+          top left,
+          linear-gradient(-135deg, transparent 15px, deeppink 0)
+          top right,
+          linear-gradient(-45deg, transparent 15px, deeppink 0)
+          bottom right,
+          linear-gradient(45deg, transparent 15px, deeppink 0)
+          bottom left;
+          background-size: 50% 50%;
+          background-repeat: no-repeat;
+        }
+      </style>
+    </section>
+
+    <!-- arc 弧形切角 -->
+    <section id="arc" class="code-wrap cf">
+      <div class="css-live-wrap">
+        <div class="star" title="致敬《CSS SECRET》作者，此实例是书中例子"></div>
+        <summary>弧形切角</summary>
+        <summary>使用径向渐变实现</summary>
+        <hgroup class="arc">
+          <h1>.arc</h1>
+        </hgroup>
+      </div>
+      <style class="code" contenteditable=true>
+        .arc{
+          position: absolute;
+          top:50%;
+          left: 50%;
+          transform:translate(-50%,-50%);
+          width: 60px;
+          padding: 60px;
+          text-align: center;
+          color: white;
+          font-size: 200%;
+        }
+        .arc {
+          background:
+          radial-gradient(circle at top left,
+          transparent 15px, yellowgreen 0) top left,
+          radial-gradient(circle at top right,
+          transparent 15px, yellowgreen 0) top right,
+          radial-gradient(circle at bottom right,
+          transparent 15px, yellowgreen 0) bottom right,
+          radial-gradient(circle at bottom left,
+          transparent 15px, yellowgreen 0) bottom left;
+          background-size: 50% 50%;
+          background-repeat: no-repeat;
+        }
+      </style>
+    </section>
+
+    <!-- pesudo 伪类实现按钮明暗变化 -->
+    <section id="pesudo" class="code-wrap cf">
+      <div class="css-live-wrap">
+        <summary>单个颜色实现 hover 和 active 时的明暗变化效果</summary>
+        <summary>利用伪类及透明度实现</summary>
+        <hgroup class="pesudo">
+          <h1>.pesudo</h1>
+        </hgroup>
+      </div>
+      <style class="code" contenteditable=true>
+        .pesudo{
+          position: absolute;
+          top:50%;
+          left: 50%;
+          transform:translate(-50%,-50%);
+          width: 120px;
+          padding: 60px;
+          text-align: center;
+          color: white;
+          font-size: 200%;
+          border-radius:1em;
+          background:#00aabb;
+          cursor:pointer;
+        }
+        .pesudo:before{
+          position: absolute;
+          top: 0; right: 0; bottom: 0; left: 0;
+          z-index:-1;
+          background:rgba(0,0,0,.1);
+        }
+        .pesudo:hover:before{
+          content:"";
+        }
+        .pesudo:after{
+          position: absolute;
+          top: 0; right: 0; bottom: 0; left: 0;
+          z-index:-1;
+          background:rgba(255,255,255,.2);
+        }
+        .pesudo:active:after{
+          content:"";
+        }
+      </style>
+    </section>
+
+    <!-- trapezoid 伪类加旋转透视实现梯形 -->
+    <section id="trapezoid" class="code-wrap cf">
+      <div class="css-live-wrap">
+        <summary>梯形</summary>
+        <summary>利用伪类加旋转透视实现</summary>
+        <hgroup class="trapezoid">
+          <h1>.trapezoid</h1>
+        </hgroup>
+      </div>
+      <style class="code" contenteditable=true>
+        .trapezoid{
+          position: absolute;
+          top:50%;
+          left: 50%;
+          transform:translate(-50%,-50%);
+          width: 160px;
+          padding: 60px;
+          text-align: center;
+          color: white;
+          font-size: 200%;
+        }
+        .trapezoid:before{
+          content:"";
+          position: absolute;
+          top: 0; right: 0; bottom: 0; left: 0;
+          transform:perspective(40px) scaleY(1.3) rotateX(5deg);
+          transform-origin: bottom;
+          background:deeppink;
+          z-index:-1;
+        }
+      </style>
+    </section>
+
+    <!-- pie 利用伪类、线性渐变、旋转实现饼图 -->
+    <section id="pie" class="code-wrap cf">
+      <div class="css-live-wrap">
+      <div class="star" title="致敬《CSS SECRET》作者，此实例是书中例子"></div>
+        <summary>饼图</summary>
+        <summary>利用伪类、线性渐变、旋转实现</summary>
+        <hgroup class="pie">
+          <h1>.pie</h1>
+        </hgroup>
+      </div>
+      <style class="code" contenteditable=true>
+        .pie{
+          position: absolute;
+          top:50%;left: 50%;
+          transform:translate(-50%,-50%);
+          width: 200px;line-height:200px;
+          border-radius:50%;
+          text-align: center;
+          color: white;
+          font-size: 200%;
+          background-color:yellowgreen;
+          overflow:hidden;
+          background-image:
+          linear-gradient(to right, transparent 50%, #655 0);
+          cursor:pointer;
+        }
+        .pie:before{
+          content:"";
+          position:absolute;
+          top:0;left:50%;
+          width:50%;height:100%;
+          background-color: inherit;
+          transform-origin: left;
+          z-index:-1;
+          transform:rotate(.1turn);
+        }
+        .pie:hover:before{
+          transition:all 1s;
+          transform:rotate(.45turn);
+        }
+      </style>
+    </section>
+
+    <!-- parallelogram 伪类加拉伸实现平行四边形 -->
+    <section id="parallelogram"class="code-wrap cf">
+      <div class="css-live-wrap">
+        <summary>平行四边形</summary>
+        <summary>利用伪类、拉伸实现</summary>
+        <hgroup class="parallelogram">
+          <h1>.parallelogram</h1>
+        </hgroup>
+      </div>
+      <style class="code" contenteditable=true>
+        .parallelogram{
+          position: absolute;
+          top:50%;left: 50%;
+          transform:translate(-50%,-50%);
+          width: 280px;line-height:150px;
+          text-align: center;
+          color: white;
+          font-size: 200%;
+
+        }
+        .parallelogram:before{
+          content: '';
+          position: absolute;
+          top: 0; right: 0; bottom: 0; left: 0;
+          background-color:#00aabb;
+          z-index:-1;
+          transform: skew(.08turn);
+        }
+
+      </style>
+    </section>
+
+    <!-- diamond 伪类加拉伸加旋转实现菱形 -->
+    <section id="diamond" class="code-wrap cf">
+      <div class="css-live-wrap">
+        <summary>菱形</summary>
+        <summary>利用伪类、旋转实现</summary>
+        <hgroup class="diamond">
+          <h1>.diamond</h1>
+        </hgroup>
+      </div>
+      <style class="code" contenteditable=true>
+        .diamond{
+          position: absolute;
+          top:50%;left: 50%;
+          transform:translate(-50%,-50%);
+          width: 200px;line-height:200px;
+          text-align: center;
+          color: white;
+          font-size: 200%;
+        }
+        .diamond:before{
+          content: '';
+          position: absolute;
+          top: 0; right: 0; bottom: 0; left: 0;
+          background-color:deeppink;
+          z-index:-1;
+          transform: rotateZ(45deg);
+        }
+
+      </style>
+    </section>
+
+    <!-- corner 切角、伪类、渐变、旋转实现折角 -->
+    <section id="corner" class="code-wrap cf">
+      <div class="css-live-wrap">
+        <div class="star" title="致敬《CSS SECRET》作者，此实例是书中例子"></div>
+        <summary>折角</summary>
+        <summary>利用切角、伪类、渐变、旋转实现</summary>
+        <hgroup class="corner">
+          <h1>.corner</h1>
+        </hgroup>
+      </div>
+      <style class="code" contenteditable=true>
+        .corner{
+          position: absolute;
+          top:50%;left: 50%;
+          transform:translate(-50%,-50%);
+          width: 120px;line-height:120px;
+          padding:40px;
+          text-align: center;
+          color: white;
+          font-size: 200%;
+          background:linear-gradient(-150deg,transparent 1.5em, yellowgreen  0);
+          border-radius:.5em;
+        }
+        .corner:before{
+          content: '';
+          position: absolute;
+          top: 0; right: 0;
+          background:
+          linear-gradient(to left bottom,transparent 50%, rgba(0,0,0,.2) 0, rgba(0,0,0,.4)) 100% 0 no-repeat;
+          width: 1.73em; height: 3em;
+          transform: translateY(-1.3em) rotate(-30deg);
+          transform-origin: bottom right;
+          border-bottom-left-radius: inherit;
+          box-shadow: -.2em .2em .3em -.1em rgba(0,0,0,.15);
+        }
+
+      </style>
+    </section>
+
+    <!-- underline background-image 实现下划线 -->
+    <section id="underline" class="code-wrap cf">
+      <div class="css-live-wrap">
+        <div class="star" title="致敬《CSS SECRET》作者，此实例是书中例子"></div>
+        <summary>下划线</summary>
+        <summary>利用 background-image 实现</summary>
+        <hgroup class="underline">
+          <h1 class="underline1-ajkps">.underline1-ajkpys</h1>
+          <h1 class="underline2-ajkps">.underline2-ajkpys</h1>
+          <h1 class="underline3-ajkps">.underline3-ajkpys</h1>
+        </hgroup>
+      </div>
+      <style class="code" contenteditable=true>
+        .underline{
+          position: absolute;
+          top:50%;left: 50%;
+          transform:translate(-50%,-50%);
+          width: 400px;height:200px;
+          text-align: center;
+          color: white;
+          font-size: 200%;
+          background:#00aabb;
+          border-radius:.5em;
+        }
+        .underline1-ajkps,.underline2-ajkps,.underline3-ajkps{
+          cursor:pointer;
+          position: absolute;
+          left:16%;
+          text-shadow: .1em 0 #00aabb, -.1em 0 #00aabb;
+          transition:1s;
+        }
+        .underline1-ajkps{
+          top:10%;
+          background: linear-gradient(white, white) no-repeat;
+          background-size: 100% 1px;
+          background-position: -10em 1.15em;
+        }
+        .underline1-ajkps:hover{
+          background-position: 0 1.15em;
+        }
+        .underline2-ajkps{
+          top:38%;
+          background:
+          linear-gradient(90deg,white 50%, transparent 0) repeat-x;
+          background-size: .2em 2px;
+          background-position: -3em 1.15em;
+        }
+        .underline2-ajkps:hover{
+          background-position: 0 1.15em;
+        }
+
+        .underline3-ajkps{
+          top:66%;
+          background:
+            linear-gradient(-45deg, transparent 40%, white 0, white 60%, transparent 0) 0 1em,
+            linear-gradient(45deg, transparent 40%, white 0, white 60%, transparent 0) .1em 1em;
+          background-repeat: repeat-x;
+          background-size: .15em .1em;
+          background-position: -3em 1.15em;
+        }
+        .underline3-ajkps:hover{
+          background:
+            linear-gradient(-45deg, transparent 40%, deeppink 0, deeppink 60%, transparent 0) 0 1em,
+            linear-gradient(45deg, transparent 40%, deeppink 0, deeppink 60%, transparent 0) .1em 1em;
+          background-repeat: repeat-x;
+          background-size: .15em .1em;
+          background-position: 0 1.15em;
+        }
+      </style>
+    </section>
+
+    <!-- stripe 渐变实现条纹背景图案 -->
+    <section id="stripe" class="code-wrap cf">
+      <div class="css-live-wrap">
+        <div class="star" title="致敬《CSS SECRET》作者，此实例是书中例子"></div>
+        <summary>条纹背景图</summary>
+        <summary>利用渐变实现</summary>
+        <hgroup class="stripe">
+          <h1>.stripe</h1>
+        </hgroup>
+      </div>
+      <style class="code" contenteditable=true>
+        .stripe{
+          position: absolute;
+          top:50%;left: 50%;
+          transform:translate(-50%,-50%);
+          width: 200px;line-height:200px;
+          text-align: center;
+          color: white;
+          font-size: 200%;
+          background:deeppink;
+          border-radius:.5em;
+          background:repeating-linear-gradient(45deg,#CC9999, #CC9999 15px, #CCCCCC 0, #CCCCCC 30px)
+        }
+      </style>
+    </section>
+
+    <!-- stripe 渐变实现条纹背景图案 -->
+    <section class="code-wrap cf">
+      <div class="css-live-wrap">
+        <summary>条纹背景图</summary>
+        <summary>利用渐变实现</summary>
+        <hgroup class="wave-stripe">
+          <h1>.wave-stripe</h1>
+        </hgroup>
+      </div>
+      <style class="code" contenteditable=true>
+        .wave-stripe{
+          position: absolute;
+          top:50%;left: 50%;
+          transform:translate(-50%,-50%);
+          width: 200px;line-height:200px;
+          text-align: center;
+          color: #333;
+          font-size: 200%;
+          border-radius:.5em;
+          background:
+          linear-gradient(135deg, deeppink 25%, transparent 25%) -50px 0,
+          linear-gradient(225deg, deeppink 25%, transparent 25%) -50px 0,
+          linear-gradient(315deg, deeppink 25%, transparent 25%),
+          linear-gradient(45deg, deeppink 25%, transparent 25%);
+          background-size: 40px 40px;
+        }
+      </style>
+    </section>
+
+    <!-- stripe 渐变实现条纹背景图案 -->
+    <section class="code-wrap cf">
+      <div class="css-live-wrap">
+        <summary>条纹背景图</summary>
+        <summary>利用渐变实现</summary>
+        <hgroup class="arrow-stripe">
+          <h1>.arrow-stripe</h1>
+        </hgroup>
+      </div>
+      <style class="code" contenteditable=true>
+        .arrow-stripe{
+          position: absolute;
+          top:50%;left: 50%;
+          transform:translate(-50%,-50%);
+          width: 200px;line-height:200px;
+          text-align: center;
+          color: #333;
+          font-size: 200%;
+          border-radius:.5em;
+          background:
+          linear-gradient(45deg, #92baac 45px, transparent 45px)64px 64px,
+          linear-gradient(45deg, #92baac 45px, transparent 45px,transparent 91px, #e1ebbd 91px, #e1ebbd 135px, transparent 135px),
+          linear-gradient(-45deg, #92baac 23px, transparent 23px, transparent 68px,#92baac 68px,#92baac 113px,transparent 113px,transparent 158px,#92baac 158px);
+          background-color:#e1ebbd;
+          background-size: 128px 128px;
+        }
+      </style>
+    </section>
+
+    <!-- stripe 渐变实现条纹背景图案 -->
+    <section class="code-wrap cf">
+      <div class="css-live-wrap">
+        <summary>混合模式背景图</summary>
+        <summary>利用渐变实现</summary>
+        <hgroup class="colorful-stripe">
+          <h1>.colorful-stripe</h1>
+        </hgroup>
+      </div>
+      <style class="code" contenteditable=true>
+        .colorful-stripe {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          width: 300px;
+          line-height: 200px;
+          text-align: center;
+          color: #fff;
+          font-size: 200%;
+          border-radius: .5em;
+          background:
+          linear-gradient(limegreen, transparent), linear-gradient(90deg, skyblue, transparent), linear-gradient(-90deg, coral, transparent);
+          background-blend-mode: screen;
+        }
+      </style>
+    </section>
+
+    <!-- stripe 渐变实现随机背景图案 -->
+    <section class="code-wrap cf">
+      <div class="css-live-wrap">
+        <div class="star" title="致敬《CSS SECRET》作者，此实例是书中例子"></div>
+        <summary>随机背景图</summary>
+        <summary>利用渐变、蝉随机实现</summary>
+        <hgroup class="random-stripe">
+          <h1>.random-stripe</h1>
+        </hgroup>
+      </div>
+      <style class="code" contenteditable=true>
+        .random-stripe {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          width: 300px;
+          line-height: 200px;
+          text-align: center;
+          color: #fff;
+          font-size: 200%;
+          border-radius: .5em;
+          background: hsl(20, 40%, 90%);
+          background-image:
+          linear-gradient(90deg, #663366 11px, transparent 0),
+          linear-gradient(90deg, #CCCCCC 23px, transparent 0),
+          linear-gradient(90deg, #CC99CC 41px, transparent 0),
+          linear-gradient(90deg, #ff9933 53px, transparent 0);
+          background-size: 59px 100%, 61px 100%, 83px 100%, 103px 100%;
+        }
+      </style>
+    </section>
+
+    <!-- sun 线性渐变、阴影、旋转实现晴天天气图案 -->
+    <section id="sun" class="code-wrap cf">
+      <div class="css-live-wrap">
+        <summary>晴天（sun）（单标签实现）</summary>
+        <summary>利用线性渐变、阴影、旋转实现</summary>
+        <hgroup class="sun">
+          <h1>.sun</h1>
+        </hgroup>
+      </div>
+      <style class="code" contenteditable=true>
+        .sun{
+          position: absolute;
+          top: 50%;left: 50%;
+          width:200px;height:260px;
+          transform: translate(-50%, -50%);
+          text-align:center;
+          font-size:200%;
+          color:#fff;
+          background:#0BF;
+          border-radius:5px;
+        }
+        .sun:before{
+          content:"";
+          position: absolute;
+          width: 80px;height: 80px;
+          left: 50%;top: 50%;
+          transform: translate(-50%, -50%);
+          border-radius:50%;
+          background:rgba(255, 238, 68, 1);
+          box-shadow: 0 0 0 15px rgba(255,255,0,0.2),0 0 15px #fff;
+          z-index:-10;
+        }
+        .sun:after{
+          content:"";
+          position: absolute;
+          top: 50%;left: 50%;
+          height: 160px;
+          width: 160px;
+          transform: translate(-50%, -50%) rotate(30deg);
+          z-index:-100;
+          background-image:
+          -webkit-linear-gradient(top,rgba(255,255,255,0) 0%, rgba(255,255,255,0.8) 50%, rgba(255,255,255,0) 100%),
+          -webkit-linear-gradient(left,rgba(255,255,255,0) 0%, rgba(255,255,255,0.8) 50%, rgba(255,255,255,0) 100%);
+          background-size: 20px 100%, 100% 20px;
+          background-repeat: no-repeat;
+          background-position: center center, center center;
+          animation:sunRotate 10s linear infinite;
+        }
+        @keyframes sunRotate{
+          0%{
+            transform: translate(-50%, -50%) rotate(30deg);
+          }
+          100%{
+            transform: translate(-50%, -50%) rotate(390deg);
+          }
+        }
+      </style>
+    </section>
+
+    <!-- cloudy 阴影实现多云天气图案 -->
+    <section id="cloudy" class="code-wrap cf">
+      <div class="css-live-wrap">
+        <summary>多云（cloudy）（单标签实现）</summary>
+        <summary>利用线性渐变、阴影、缩放实现</summary>
+        <hgroup class="cloudy">
+          <h1>.cloudy</h1>
+        </hgroup>
+      </div>
+      <style class="code" contenteditable=true>
+        .cloudy{
+          position: absolute;
+          top: 50%;left: 50%;
+          width:200px;height:260px;
+          transform: translate(-50%, -50%);
+          text-align:center;
+          font-size:200%;
+          color:#fff;
+          background:#2EB5E5;
+          border-radius:5px;
+        }
+        .cloudy:before {
+          content: "";
+          text-indent:23px;
+          font-size:22px;
+          line-height:40px;
+          color:#333;
+          position: absolute;
+          height: 50px;width: 50px;
+          background: #FFFFFF;
+          left:30%;
+          top:40%;
+          transform: translate(-50%, -50%);
+          border-radius: 50%;
+          box-shadow:
+            #FFFFFF 65px -15px 0 -5px,
+            #FFFFFF 25px -25px,
+            #FFFFFF 30px 10px,
+            #FFFFFF 60px 15px 0 -10px,
+            #FFFFFF 85px 5px 0 -5px;
+          animation: cloudy 5s ease-in-out infinite;
+        }
+        .cloudy:after{
+          content:"";
+          position: absolute;
+          top: 80%;left: 50%;
+          height: 15px;
+          width: 120px;
+          background:rgba(0,0,0,.5);
+          border-radius: 50%;
+          transform: translate(-50%, -50%);
+          animation: cloudy_shadow 5s ease-in-out infinite;
+        }
+      @keyframes cloudy {
+        50%{
+          transform: translate(-50%, -70%);
+        }
+        100%{
+          transform: translate(-50%, -50%);
+        }
+      }
+      @keyframes cloudy_shadow {
+        50%{
+          transform: translate(-50%, -50%) scale(0.8);
+          background:rgba(0,0,0,.2);
+        }
+        100%{
+          transform: translate(-50%, -50%) scale(1);
+            background:rgba(0,0,0,.5);
+        }
+      }
+      </style>
+    </section>
+
+    <!-- rainy 阴影实现雨天天气图案 -->
+    <section id="rainy" class="code-wrap cf">
+      <div class="css-live-wrap">
+        <summary>雨（rainy）</summary>
+        <summary>利用线性渐变、阴影、缩放实现</summary>
+        <hgroup class="rainy-container">
+          <h1>.rainy</h1>
+          <div class="rainy"></div>
+        </hgroup>
+      </div>
+      <style class="code" contenteditable=true>
+        .rainy-container {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          width: 200px;
+          height: 260px;
+          transform: translate(-50%, -50%);
+          text-align: center;
+          font-size: 200%;
+          color: #fff;
+          background: #E6E6E6;
+          border-radius: 5px;
+        }
+        .rainy {
+          position: absolute;
+          width: 3px;
+          height: 6px;
+          top: 30%;
+          left: 50%;
+          background: #CCCCCC;
+          border-radius: 50%;
+          animation: rainy_rain .7s infinite linear;
+        }
+        .rainy:before {
+          content: "";
+          color: #333;
+          position: absolute;
+          height: 50px;
+          width: 50px;
+          top: 30px;
+          left: -40px;
+          background: #CCC;
+          transform: translate(-50%, -50%);
+          border-radius: 50%;
+          box-shadow: #CCC 65px -15px 0 -5px, #CCC 25px -25px, #CCC 30px 10px, #CCC 60px 15px 0 -10px, #CCC 85px 5px 0 -5px;
+          animation: cloudy 5s ease-in-out infinite;
+        }
+        .rainy:after {
+          content: "";
+          position: absolute;
+          top: 120px;
+          left: 50%;
+          height: 15px;
+          width: 120px;
+          background: rgba(0, 0, 0, .5);
+          border-radius: 50%;
+          transform: translate(-50%, -50%);
+          animation: cloudy_shadow 5s ease-in-out infinite;
+        }
+        @keyframes cloudy {
+          50% {
+            transform: translate(-50%, -70%);
+          }
+          100% {
+            transform: translate(-50%, -50%);
+          }
+        }
+        @keyframes cloudy_shadow {
+          50% {
+            transform: translate(-50%, -50%) scale(0.8);
+            background: rgba(0, 0, 0, .2);
+          }
+          100% {
+            transform: translate(-50%, -50%) scale(1);
+            background: rgba(0, 0, 0, .5);
+          }
+        }
+        @keyframes rainy_rain {
+          0% {
+            box-shadow: rgba(0, 0, 0, 0) -10px 30px, rgba(0, 0, 0, 0) 40px 40px, rgba(0, 0, 0, .3) -50px 75px, rgba(0, 0, 0, .3) 55px 50px, rgba(0, 0, 0, .3) -18px 100px, rgba(0, 0, 0, .3) 12px 95px, rgba(0, 0, 0, .3) -31px 45px, rgba(0, 0, 0, .3) 30px 35px;
+          }
+          25% {
+            box-shadow: rgba(0, 0, 0, .3) -10px 45px, rgba(0, 0, 0, .3) 40px 60px, rgba(0, 0, 0, .3) -50px 90px, rgba(0, 0, 0, .3) 55px 65px, rgba(0, 0, 0, 0) -18px 120px, rgba(0, 0, 0, 0) 12px 120px, rgba(0, 0, 0, .3) -31px 70px, rgba(0, 0, 0, .3) 30px 60px;
+          }
+          26% {
+            box-shadow: rgba(0, 0, 0, .3) -10px 45px, rgba(0, 0, 0, .3) 40px 60px, rgba(0, 0, 0, .3) -50px 90px, rgba(0, 0, 0, .3) 55px 65px, rgba(0, 0, 0, 0) -18px 40px, rgba(0, 0, 0, 0) 12px 20px, rgba(0, 0, 0, .3) -31px 70px, rgba(0, 0, 0, .3) 30px 60px;
+          }
+          50% {
+            box-shadow: rgba(0, 0, 0, .3) -10px 70px, rgba(0, 0, 0, .3) 40px 80px, rgba(0, 0, 0, 0) -50px 100px, rgba(0, 0, 0, .3) 55px 80px, rgba(0, 0, 0, .3) -18px 60px, rgba(0, 0, 0, .3) 12px 45px, rgba(0, 0, 0, .3) -31px 95px, rgba(0, 0, 0, .3) 30px 85px;
+          }
+          51% {
+            box-shadow: rgba(0, 0, 0, .3) -10px 70px, rgba(0, 0, 0, .3) 40px 80px, rgba(0, 0, 0, 0) -50px 45px, rgba(0, 0, 0, .3) 55px 80px, rgba(0, 0, 0, .3) -18px 60px, rgba(0, 0, 0, .3) 12px 45px, rgba(0, 0, 0, .3) -31px 95px, rgba(0, 0, 0, .3) 30px 85px;
+          }
+          75% {
+            box-shadow: rgba(0, 0, 0, .3) -10px 95px, rgba(0, 0, 0, .3) 40px 100px, rgba(0, 0, 0, .3) -50px 60px, rgba(0, 0, 0, 0) 55px 95px, rgba(0, 0, 0, .3) -18px 80px, rgba(0, 0, 0, .3) 12px 70px, rgba(0, 0, 0, 0) -31px 120px, rgba(0, 0, 0, 0) 30px 110px;
+          }
+          76% {
+            box-shadow: rgba(0, 0, 0, .3) -10px 95px, rgba(0, 0, 0, .3) 40px 100px, rgba(0, 0, 0, .3) -50px 60px, rgba(0, 0, 0, 0) 55px 35px, rgba(0, 0, 0, .3) -18px 80px, rgba(0, 0, 0, .3) 12px 70px, rgba(0, 0, 0, 0) -31px 25px, rgba(0, 0, 0, 0) 30px 15px;
+          }
+          100% {
+            box-shadow: rgba(0, 0, 0, 0) -10px 120px, rgba(0, 0, 0, 0) 40px 120px, rgba(0, 0, 0, .3) -50px 75px, rgba(0, 0, 0, .3) 55px 50px, rgba(0, 0, 0, .3) -18px 100px, rgba(0, 0, 0, .3) 12px 95px, rgba(0, 0, 0, .3) -31px 45px, rgba(0, 0, 0, .3) 30px 35px;
+          }
+        }
+      </style>
+    </section>
+
+    <!-- breeze 利用border、transparent、实现微风天气图案 -->
+    <section id="breeze" class="code-wrap cf">
+      <div class="css-live-wrap">
+        <summary>微风（breeze）</summary>
+        <summary>利用border、transparent、实现</summary>
+        <hgroup class="breeze-container">
+          <h1>.breeze</h1>
+          <div class="breeze"></div>
+        </hgroup>
+      </div>
+      <style class="code" contenteditable=true>
+        .breeze-container{
+          position: absolute;
+          top: 50%;left: 50%;
+          width:200px;height:260px;
+          transform: translate(-50%, -50%);
+          text-align:center;
+          font-size:200%;
+          color:#fff;
+          background:#00BBFF;
+          border-radius:5px;
+        }
+        .breeze-container:after{
+          content:"";
+          position:absolute;
+          top:58%;
+          left:50%;
+          transform: translate(-50%, -50%);
+          width:6px;
+          height:70px;
+          background:#fff;
+        }
+        .breeze{
+          position:absolute;
+          top: 30%;
+          left: 50%;
+          transform: translate(-50%, -50%) rotate(1deg);
+          border-bottom:60px solid #fff;
+          border-left:5px solid transparent;
+          border-right:5px solid transparent;
+          animation: windmill 12s infinite linear;
+          transform-origin:50.5% 62px;
+        }
+        .breeze:before{
+          position:absolute;
+          top: 75px;left: -59px;
+          content:"";
+          border-right:60px solid #fff;
+          border-top:5px solid transparent;
+          border-bottom:5px solid transparent;
+          transform:rotate(-30deg);
+        }
+        .breeze:after{
+          position:absolute;
+          top: 75px;left: -1px;
+          content:"";
+          border-left:60px solid #fff;
+          border-top:5px solid transparent;
+          border-bottom:5px solid transparent;
+          transform:rotate(30deg);
+        }
+        @keyframes windmill{
+          0%{
+            transform: translate(-50%, -50%) rotate(0deg);
+          }
+          100%{
+            transform: translate(-50%, -50%) rotate(360deg);
+          }
+        }
+      </style>
+    </section>
+
+    <!-- rainbow 利用border、box-shadow 实现彩虹天气图案 -->
+    <section id="rainbow" class="code-wrap cf">
+      <div class="css-live-wrap">
+        <summary>彩虹（rainbow）</summary>
+        <summary>利用border、box-shadow 实现</summary>
+        <hgroup class="rainbow-container">
+          <h1>.rainbow</h1>
+          <div class="rainbow"></div>
+        </hgroup>
+      </div>
+      <style class="code" contenteditable=true>
+        .rainbow-container{
+          position: absolute;
+          top: 50%;left: 50%;
+          width:200px;height:260px;
+          transform: translate(-50%, -50%);
+          text-align:center;
+          font-size:200%;
+          color:#fff;
+          background:#F3D166;
+          border-radius:5px;
+        }
+        .rainbow{
+          position:absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          height: 1px;width: 1px;
+        }
+        .rainbow:before{
+          content:"";
+          position:absolute;
+          top: 50%;left: 50%;
+          transform: translate(-50%, -50%) rotate(45deg);
+          height: 70px;width: 70px;
+          border-radius: 100px 0 0 0;
+          box-shadow:
+            #F44336 -2px -2px 0 1px,
+            #FF9800 -4px -4px 0 3px,
+            #FFEB3B -6px -6px 0 5px,
+            #8BC34A -8px -8px 0 7px,
+            #00BCD4 -10px -10px 0 9px,
+            #2196F3 -12px -12px 0 11px,
+            #9C27B0 -14px -14px 0 13px;
+          animation: rainbow 5s ease-in-out infinite;
+        }
+        .rainbow:after{
+          content: "";
+          position: absolute;
+          top: 70px;
+          left: 50%;
+          height: 15px;
+          width: 120px;
+          background: rgba(0, 0, 0, .5);
+          border-radius: 50%;
+          transform: translate(-50%, -50%);
+          animation: cloudy_shadow 5s ease-in-out infinite;
+        }
+        @keyframes rainbow {
+          50% {
+            transform: translate(-50%, -55%) rotate(30deg);
+          }
+          100% {
+            transform: translate(-50%, -50%) rotate(45deg);
+          }
+        }
+        @keyframes cloudy_shadow {
+          50% {
+            transform: translate(-50%, -50%) scale(0.8);
+            background: rgba(0, 0, 0, .2);
+          }
+          100% {
+            transform: translate(-50%, -50%) scale(1);
+            background: rgba(0, 0, 0, .5);
+          }
+        }
+      </style>
+    </section>
+
+    <!-- starry 利用 box-shadow 实现彩虹天气图案 -->
+    <section id="starry" class="code-wrap cf">
+      <div class="css-live-wrap">
+        <summary>夜空璀璨（starry）</summary>
+        <summary>利用 box-shadow 实现</summary>
+        <hgroup class="starry-container">
+          <h1>.starry</h1>
+          <div class="starry"></div>
+        </hgroup>
+      </div>
+      <style class="code" contenteditable=true>
+        .starry-container{
+          position: absolute;
+          top: 50%;left: 50%;
+          width:200px;height:260px;
+          transform: translate(-50%, -50%);
+          text-align:center;
+          font-size:200%;
+          color:#fff;
+          background:#222233;
+          border-radius:5px;
+        }
+        .starry{
+          position:absolute;
+          top: 30%;left: 40%;
+          transform: translate(-50%, -50%);
+          height: 4px;width: 4px;
+          border-radius:50%;
+          box-shadow:
+            #FFFFFF -26px 77px 0 -1px,
+            rgba(255,255,255,0.1) -36px 59px 0 -1px,
+            rgba(255,255,255,0.1) -28px 89px 0 -1px,
+            #FFFFFF -35px 20px 0 -1px,
+            #FFFFFF 14px 100px,
+            rgba(255,255,255,0.1) 41px 60px,
+            #FFFFFF 34px 39px,
+            rgba(255,255,255,0.1) 14px 45px 0 -1px,
+            #FFFFFF 64px 12px 0 -1px,
+            rgba(255,255,255,0.1) 32px 96px 0 -1px,
+            #FFFFFF 64px 71px,
+            rgba(255,255,255,0.1) 60px 18px 0 -1px,
+            #FFFFFF 34px 9px,
+            rgba(255,255,255,0.1) -26px 55px 0 -1px;
+          animation: starry_star 5s ease-in-out infinite;
+        }
+        .starry:before{
+          content:"";
+          position:absolute;
+          top: 20%;left: 50%;
+          width:100px;height:100px;
+          box-shadow: #FFFFFF -25px 0;
+          transform: rotate(-5deg);
+          border-radius: 50%;
+          animation: starry 5s ease-in-out infinite;
+        }
+        @keyframes starry {
+          50% {
+            transform: rotate(10deg);
+          }
+        }
+        @keyframes starry_star{
+          50%{
+            box-shadow:
+              rgba(255,255,255,0.1) -26px 77px 0 -1px,
+              #FFF -36px 59px 0 -1px,
+              #FFF -28px 89px 0 -1px,
+              rgba(255,255,255,0.1) -35px 20px 0 -1px,
+              rgba(255,255,255,0.1) 14px 100px,
+              #FFF 41px 60px,
+              rgba(255,255,255,0.1) 34px 39px,
+              #FFF 14px 45px 0 -1px,
+              rgba(255,255,255,0.1) 64px 12px 0 -1px,
+              #FFF 32px 96px 0 -1px,
+              rgba(255,255,255,0.1) 64px 71px,
+              #FFF 60px 18px 0 -1px,
+              rgba(255,255,255,0.1) 34px 9px,
+              #FFF -26px 55px 0 -1px;
+            }
+        }
+      </style>
+    </section>
+
+    <!-- thunder 阴影、border实现雷电天气图案 -->
+    <section id="thunder" class="code-wrap cf">
+      <div class="css-live-wrap">
+        <summary>雷电（thunder）</summary>
+        <summary>利用阴影、border实现</summary>
+        <hgroup class="thunder-container">
+          <h1>.thunder</h1>
+          <div class="thunder"></div>
+        </hgroup>
+      </div>
+      <style class="code" contenteditable=true>
+        .thunder-container {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          width: 200px;
+          height: 260px;
+          transform: translate(-50%, -50%);
+          text-align: center;
+          font-size: 200%;
+          color: #fff;
+          background: #444;
+          border-radius: 5px;
+        }
+        .thunder {
+          color: #333;
+          position: absolute;
+          height: 50px;
+          width: 50px;
+          top: 40%;
+          left: 30%;
+          background: #222;
+          transform: translate(-50%, -50%);
+          border-radius: 50%;
+          box-shadow:
+            #222 65px -15px 0 -5px,
+            #222 25px -25px,
+            #222 30px 10px,
+            #222 60px 15px 0 -10px,
+            #222 85px 5px 0 -5px;
+          animation: cloudy 5s ease-in-out infinite;
+        }
+        .thunder:before {
+          content: "";
+          position: absolute;
+          top: 60px;
+          left: 60px;
+          border-left: 0px solid transparent;
+          border-right: 8px solid transparent;
+          border-top: 38px solid yellow;
+          box-shadow: yellow -7px -32px;
+          transform:rotate(30deg);
+          transform-origin:center -50px;
+          animation:stormy_thunder 2s steps(1, end) infinite;;
+        }
+        .thunder:after {
+          content: "";
+          position: absolute;
+          top: 120px;
+          left: 64px;
+          height: 15px;
+          width: 120px;
+          background: rgba(0, 0, 0, .5);
+          border-radius: 50%;
+          z-index:-1;
+          transform: translate(-50%, -50%);
+          animation: cloudy_shadow 5s ease-in-out infinite;
+        }
+        @keyframes cloudy {
+          50% {
+            transform: translate(-50%, -30px);
+          }
+        }
+        @keyframes cloudy_shadow {
+          50% {
+            transform: translate(-50%, 0) scale(0.8);
+            background: rgba(0, 0, 0, .2);
+          }
+        }
+        @keyframes stormy_thunder{
+          0%  {  transform: rotate(30deg); opacity:1; }
+          5%  {  transform: rotate(-34deg); opacity:1; }
+          10% {  transform: rotate(0deg); opacity:1; }
+          15% {  transform: rotate(-34deg); opacity:0; }
+        }
+      </style>
+    </section>
+
+    <!-- snowy 阴影实现雪天天气图案 -->
+    <section id="snowy" class="code-wrap cf">
+      <div class="css-live-wrap">
+        <summary>雪（snowy）</summary>
+        <summary>利用阴影实现</summary>
+        <hgroup class="snowy-container">
+          <h1>.snowy</h1>
+          <div class="snowy"></div>
+        </hgroup>
+      </div>
+      <style class="code" contenteditable=true>
+        .snowy-container {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          width: 200px;
+          height: 260px;
+          transform: translate(-50%, -50%);
+          text-align: center;
+          font-size: 200%;
+          color: #fff;
+          background: #607D8B;
+          border-radius: 5px;
+        }
+        .snowy {
+          position: absolute;
+          width: 4px;
+          height: 4px;
+          border-radius:50%;
+          top: 30%;
+          left: 50%;
+          background: #fff;
+          border-radius: 50%;
+          animation: snowy_rain 2s infinite linear;
+        }
+        .snowy:before {
+          content: "";
+          color: #333;
+          position: absolute;
+          height: 50px;
+          width: 50px;
+          top: 30px;
+          left: -40px;
+          background: #eee;
+          transform: translate(-50%, -50%);
+          border-radius: 50%;
+          box-shadow:
+            #eee 65px -15px 0 -5px,
+            #eee 25px -25px,
+            #eee 30px 10px,
+            #eee 60px 15px 0 -10px,
+            #eee 85px 5px 0 -5px;
+          animation: cloudy 5s ease-in-out infinite;
+        }
+        .snowy:after {
+          content: "";
+          position: absolute;
+          top: 120px;
+          left: 50%;
+          height: 15px;
+          width: 120px;
+          background: rgba(0, 0, 0, .5);
+          border-radius: 50%;
+          transform: translate(-50%, -50%);
+          animation: cloudy_shadow 5s ease-in-out infinite;
+        }
+        @keyframes cloudy {
+          50% {
+            transform: translate(-50%, -70%);
+          }
+          100% {
+            transform: translate(-50%, -50%);
+          }
+        }
+        @keyframes cloudy_shadow {
+          50% {
+            transform: translate(-50%, -50%) scale(0.8);
+            background: rgba(0, 0, 0, .2);
+          }
+          100% {
+            transform: translate(-50%, -50%) scale(1);
+            background: rgba(0, 0, 0, .5);
+          }
+        }
+        @keyframes snowy_rain {
+          0% {
+            box-shadow:
+              rgba(255, 255, 255, 0) -10px 30px,
+              rgba(255, 255, 255, 0) 40px 40px,
+              rgba(255, 255, 255, .6) -50px 75px,
+              rgba(255, 255, 255, .6) 55px 50px,
+              rgba(255, 255, 255, .6) -18px 100px,
+              rgba(255, 255, 255, .6) 12px 95px,
+              rgba(255, 255, 255, .6) -31px 45px,
+              rgba(255, 255, 255, .6) 30px 35px;
+          }
+          25% {
+            box-shadow:
+              rgba(255, 255, 255, .6) -10px 45px,
+              rgba(255, 255, 255, .6) 40px 60px,
+              rgba(255, 255, 255, .6) -50px 90px,
+              rgba(255, 255, 255, .6) 55px 65px,
+              rgba(255, 255, 255, 0) -18px 120px,
+              rgba(255, 255, 255, 0) 12px 120px,
+              rgba(255, 255, 255, .6) -31px 70px,
+              rgba(255, 255, 255, .6) 30px 60px;
+          }
+          26% {
+            box-shadow:
+              rgba(255, 255, 255, .6) -10px 45px,
+              rgba(255, 255, 255, .6) 40px 60px,
+              rgba(255, 255, 255, .6) -50px 90px,
+              rgba(255, 255, 255, .6) 55px 65px,
+              rgba(255, 255, 255, 0) -18px 40px,
+              rgba(255, 255, 255, 0) 12px 20px,
+              rgba(255, 255, 255, .6) -31px 70px,
+              rgba(255, 255, 255, .6) 30px 60px;
+          }
+          50% {
+            box-shadow:
+              rgba(255, 255, 255, .6) -10px 70px,
+              rgba(255, 255, 255, .6) 40px 80px,
+              rgba(255, 255, 255, 0) -50px 100px,
+              rgba(255, 255, 255, .6) 55px 80px,
+              rgba(255, 255, 255, .6) -18px 60px,
+              rgba(255, 255, 255, .6) 12px 45px,
+              rgba(255, 255, 255, .6) -31px 95px,
+              rgba(255, 255, 255, .6) 30px 85px;
+          }
+          51% {
+            box-shadow:
+              rgba(255, 255, 255, .6) -10px 70px,
+              rgba(255, 255, 255, .6) 40px 80px,
+              rgba(255, 255, 255, 0) -50px 45px,
+              rgba(255, 255, 255, .6) 55px 80px,
+              rgba(255, 255, 255, .6) -18px 60px,
+              rgba(255, 255, 255, .6) 12px 45px,
+              rgba(255, 255, 255, .6) -31px 95px,
+              rgba(255, 255, 255, .6) 30px 85px;
+          }
+          75% {
+            box-shadow:
+              rgba(255, 255, 255, .6) -10px 95px,
+              rgba(255, 255, 255, .6) 40px 100px,
+              rgba(255, 255, 255, .6) -50px 60px,
+              rgba(255, 255, 255, 0) 55px 95px,
+              rgba(255, 255, 255, .6) -18px 80px,
+              rgba(255, 255, 255, .6) 12px 70px,
+              rgba(255, 255, 255, 0) -31px 120px,
+              rgba(255, 255, 255, 0) 30px 110px;
+          }
+          76% {
+            box-shadow:
+              rgba(255, 255, 255, .6) -10px 95px,
+              rgba(255, 255, 255, .6) 40px 100px,
+              rgba(255, 255, 255, .6) -50px 60px,
+              rgba(255, 255, 255, 0) 55px 35px,
+              rgba(255, 255, 255, .6) -18px 80px,
+              rgba(255, 255, 255, .6) 12px 70px,
+              rgba(255, 255, 255, 0) -31px 25px,
+              rgba(255, 255, 255, 0) 30px 15px;
+          }
+          100% {
+            box-shadow:
+              rgba(255, 255, 255, 0) -10px 120px,
+              rgba(255, 255, 255, 0) 40px 120px,
+              rgba(255, 255, 255, .6) -50px 75px,
+              rgba(255, 255, 255, .6) 55px 50px,
+              rgba(255, 255, 255, .6) -18px 100px,
+              rgba(255, 255, 255, .6) 12px 95px,
+              rgba(255, 255, 255, .6) -31px 45px,
+              rgba(255, 255, 255, .6) 30px 35px;
+          }
+        }
+      </style>
+    </section>
+
+    <!-- five-star 利用border、transparent、旋转实现 -->
+    <section id="five-star" class="code-wrap cf">
+      <div class="css-live-wrap">
+        <summary>五角星（单标签实现）</summary>
+        <summary>利用border、transparent、旋转实现</summary>
+        <hgroup class="five-star">
+          <h1></h1>
+        </hgroup>
+      </div>
+      <style class="code" contenteditable=true>
+        .five-star{
+          position: absolute;
+          top: 35%;
+          right: 50%;
+          transform: translate(-50%, -50%);
+          width: 0;
+          height: 0;
+          display: block;
+          border-left: 3.04px solid transparent;
+          border-right: 3.24px solid transparent;
+          border-bottom: 10px solid #98DBE3;
+          -webkit-filter: drop-shadow(1px .5px 1px #ccc);
+          cursor: pointer;
+          transform:scale(8);
+        }
+        .five-star:before{
+            content: "";
+            position: absolute;
+            top: 8.65px;
+            left: -8.82px;
+            width: 0;
+            height: 0;
+            color: #98DBE3;
+            display: block;
+            border-left: 12.5px solid transparent;
+            border-right: 12.5px solid transparent;
+            border-bottom: 9.08px solid #98DBE3;
+            transform-origin: top center;
+            transform: rotate(36deg);
+        }
+        .five-star:after{
+            content: "";
+            position: absolute;
+            top: 8.65px;
+            left: -15px;
+            width: 0;
+            height: 0;
+            color: #98DBE3;
+            display: block;
+            border-left: 12.5px solid transparent;
+            border-right: 12.5px solid transparent;
+            border-bottom: 9.08px solid #98DBE3;
+            transform-origin: top center;
+            transform: rotate(-36deg);
+        }
+      </style>
+    </section>
+
+    <!-- TaiChi 利用border、transparent、旋转实现太极图 -->
+    <section id="TaiChi" class="code-wrap cf">
+      <div class="css-live-wrap">
+        <summary>太极图（单标签实现）</summary>
+        <summary>利用 box-shadow 实现</summary>
+        <hgroup class="TaiChi">
+          <h1></h1>
+        </hgroup>
+      </div>
+      <style class="code" contenteditable=true>
+        .TaiChi{
+          position: absolute;
+          top: 50%;left: 50%;
+          width: 200px;height: 200px;
+          transform: translate(-50%, -50%);
+          box-shadow:0 0 2px #ddd;
+          border-radius:50%;
+          background-image:
+            radial-gradient(#000 12.5px, transparent 12.5px),
+            radial-gradient(#fff 12.5px, transparent 12.5px),
+            radial-gradient(#fff 50px, transparent 50px),
+            radial-gradient(#000 50px, transparent 50px),
+            linear-gradient(90deg,#000 100px, transparent 100px);
+          background-position:center 50px,center -50px,center 50px,center -50px,0 0;
+        }
+      </style>
+    </section>
+
+    <!-- chrome 利用渐变实现 chrome 浏览器图标 -->
+    <section id="chrome" class="code-wrap cf">
+      <div class="css-live-wrap">
+        <summary>Chrome（单标签实现）</summary>
+        <summary>利用渐变实现</summary>
+        <hgroup class="Chrome">
+          <h1></h1>
+        </hgroup>
+      </div>
+      <style class="code" contenteditable=true>
+        .Chrome{
+          position: absolute;
+          top: 50%;left: 50%;
+          width: 180px;height: 180px;
+          transform: translate(-50%, -50%);
+          box-shadow:0 0px 4px #999,0 0 2px #ddd inset;
+          border-radius:50%;
+          background-image:
+            radial-gradient(#4FACF5 0%,#2196F3 28%, transparent 28%),
+            radial-gradient(#fff 33%, transparent 33%),
+            linear-gradient(-50deg,#FFEB3B 34%, transparent 34%),
+            linear-gradient(60deg,#4CAF50 33%, transparent 33%),
+            linear-gradient(180deg,#FF756B 0%, #F44336 30%, transparent 30%),
+            linear-gradient(-120deg,#FFEB3B 40%, transparent 40%),
+            linear-gradient(-60deg,#FFEB3B 30%, transparent 30%),
+            linear-gradient(0deg,#4CAF50 45%, transparent 45%),
+            linear-gradient(60deg,#4CAF50 30%, transparent 30%),
+            linear-gradient(120deg,#F44336 50%, transparent 50%),
+            linear-gradient(180deg,#F44336 30%, transparent 30%);
+          background-position:0 0;
+        }
+      </style>
+    </section>
+
+    <!-- Opera 利用渐变实现 Opera 浏览器图标 -->
+    <section id="Opera" class="code-wrap cf">
+      <div class="css-live-wrap">
+        <summary>Opera（单标签实现）</summary>
+        <summary>利用渐变、实现</summary>
+        <hgroup class="Opera">
+          <h1></h1>
+        </hgroup>
+      </div>
+      <style class="code" contenteditable=true>
+        .Opera{
+          position: absolute;
+          top: 50%;left: 50%;
+          width: 170px;height: 200px;
+          transform: translate(-50%, -50%);
+          border-radius:50%;
+          box-shadow:0 2px 4px #333;
+          background-image:
+            linear-gradient(rgb(254, 135, 138) 0%, rgb(231, 22, 22) 50%, rgb(128, 0, 0) 85%, rgb(184, 3, 4) 100%);
+        }
+        .Opera:after{
+          content:"";
+          position: absolute;
+          top:50%;left:50%;
+          width: 60px;height: 180px;
+          transform: translate(-50%, -50%);
+          border-radius:50%;
+          background:#fff;
+        }
+        .Opera:before{
+          content:"";
+          position: absolute;
+          top:50%;left:50%;
+          width: 72px;height: 185px;
+          transform: translate(-50%, -50%);
+          border-radius:50%;
+          background:rgba(0,0,0,.4);
+        }
+      </style>
+    </section>
+
+    <!-- IE 利用渐变实现 IE 浏览器图标 -->
+    <section id="IE" class="code-wrap cf">
+      <div class="css-live-wrap">
+        <summary>IE（单标签实现）</summary>
+        <summary>利用渐变、多重阴影实现</summary>
+        <hgroup class="IE">
+          <h1></h1>
+        </hgroup>
+      </div>
+      <style class="code" contenteditable=true>
+        .IE{
+          position: absolute;
+          top: 50%;left: 50%;
+          width:200px; height:200px;
+          transform: translate(-50%, -50%);
+          border-radius:50%;
+          /* box-shadow:1px 2px 1px #ddd; */
+          background-image:
+             radial-gradient(#fff 38%, transparent 38%),
+             radial-gradient(#09C 0%, #09C 100%);
+
+        }
+        .IE:before{
+          content: "";
+          width:285px;
+          height:122px;
+          background:none;
+          border-radius:100%;
+          position:absolute;
+          top:33px;
+          left:-45px;
+          margin:auto;
+          box-shadow:
+            inset 0 12px 0 13px  #09c,
+            -35px -8px 0 -5px #fff;
+          transform: rotate(-35deg);
+        }
+        .IE:after {
+          content: "";
+          width: 120px;
+          height: 25px;
+          background: #09c;
+          position: absolute;
+          top: 80px;
+          left: 0;
+          right: 0;
+          margin: auto;
+          box-shadow: 50px 23px 0 -2px #fff
+        }
+      </style>
+    </section>
+
+    <!-- safari 利用渐变实现 safari 浏览器图标 -->
+    <section id="safari" class="code-wrap cf">
+      <div class="css-live-wrap">
+        <summary>safari（单标签实现）</summary>
+        <summary>利用渐变、border、旋转实现</summary>
+        <hgroup class="safari">
+          <h1></h1>
+        </hgroup>
+      </div>
+      <style class="code" contenteditable=true>
+        .safari{
+          position: absolute;
+          top: 50%;left: 50%;
+          width:200px; height:200px;
+          transform: translate(-50%, -50%);
+          border-radius:50%;
+          border:5px solid #E8E8E8;
+          box-shadow:
+            -1px 3px 1px 2px #999,
+            -1px 3px 1px 2px #999 inset;
+          background-image:
+            radial-gradient(transparent 30%,#fff 30%,#fff 34%, transparent 34%),
+            linear-gradient(rgba(255,255,255,.8) 100%, transparent 100%),
+            linear-gradient(rgba(255,255,255,.8) 100%, transparent 100%),
+            linear-gradient(rgba(255,255,255,.8) 100%, transparent 100%),
+            linear-gradient(rgba(255,255,255,.8) 100%, transparent 100%),
+            linear-gradient(#1DE3FF 0%, #1F52EF 100%);
+          background-size: 50% 50%,20px 2px,20px 2px,2px 20px,2px 20px,100%,100%;
+          background-repeat:no-repeat;
+          background-position:center center, 175px center,5px center,center 175px,center 5px,0 0;
+
+        }
+        .safari::before{
+          content:"";
+          position: absolute;
+          top: 10px;left: 50%;
+          border-radius:10px;
+          /* width:20px; height:80px; */
+          border-bottom:100px solid rgba(255,255,255,.9);
+          border-left:10px solid transparent;
+          border-right:10px solid transparent;
+          transform-origin:center 90px;
+          z-index:-1;
+          transform:translate(-50%, 0%) rotate(40deg);
+        }
+        .safari::after{
+          content:"";
+          position: absolute;
+          top: 10px;left: 50%;
+          border-radius:10px;
+          /* width:20px; height:80px; */
+          border-bottom:100px solid rgba(255,0,0,.9);
+          border-left:10px solid transparent;
+          border-right:10px solid transparent;
+          transform-origin:center 90px;
+          transform:translate(-50%, 0%) rotate(220deg);
+        }
+        .safari:hover::before{
+            transition:transform 1s;
+            transform:translate(-50%, 0%) rotate(70deg);
+        }
+        .safari:hover::after{
+            transition:transform 1s;
+            transform:translate(-50%, 0%) rotate(250deg);
+        }
+      </style>
+    </section>
+
+    <!-- 360 利用渐变实现 360 浏览器图标 -->
+<!--     <section class="code-wrap cf">
+      <div class="css-live-wrap">
+        <summary>360（单标签实现）</summary>
+        <summary>利用渐变实现</summary>
+        <hgroup class="sixty">
+          <h1></h1>
+        </hgroup>
+      </div>
+      <style class="code" contenteditable=true>
+        .sixty{
+          position: absolute;
+          top: 50%;left: 50%;
+          width:200px; height:200px;
+          transform: translate(-50%, -50%);
+          border-radius:50%;
+          border:1px solid #E8E8E8;
+          box-shadow:
+            -75px 10px 0 0px #F44336 inset,
+            -55px -60px 0 0px #FFEB3B inset,
+            15px -55px 0 20px #69E06D inset,
+            55px -5px 0 20px #2196F3 inset,
+            40px 55px 0 20px #9C27B0 inset;
+        }
+      </style>
+    </section> -->
+
+    <!-- sogou 利用渐变实现 sogou 浏览器图标 -->
+    <section id="sogou" class="code-wrap cf">
+      <div class="css-live-wrap">
+        <summary>sogou（单标签实现）</summary>
+        <summary>利用文字、阴影实现</summary>
+        <hgroup class="sogou">
+          <h1></h1>
+        </hgroup>
+      </div>
+      <style class="code" contenteditable=true>
+        .sogou{
+          position: absolute;
+          top: 50%;left: 50%;
+          width: 200px;height:200px;
+          transform: translate(-50%, -50%);
+          border:8px solid #fff;
+          box-shadow: 2px 1px 2px 2px #ccc;
+          border-radius:50%;
+          overflow:hidden;
+          background:#4DA0ED;
+        }
+        .sogou::before{
+          content:"S";
+          position: absolute;
+          line-height: 185px;
+          top:0;left:0;right:0;bottom:0;
+          color:#fff;
+          font-weight:600;
+          font-size:320px;
+          text-align:center;
+          text-shadow:
+            3px 0 0px #337FC4,
+            -5px 0px 0px #CDE4F0,
+            0px 8px 0px #387FBF;
+          transform:rotate(2deg);
+          z-index:-10;
+          overflow:hidden;
+        }
+      </style>
+    </section>
+
+    <!-- firefox 利用渐变实现 firefox 浏览器图标 -->
+    <section id="firefox" class="code-wrap cf">
+      <div class="css-live-wrap">
+        <summary>firefox（单标签实现）</summary>
+        <summary>利用多重阴影实现</summary>
+        <hgroup class="firefox">
+        </hgroup>
+      </div>
+      <style class="code" contenteditable=true>
+        .firefox{
+          position: absolute;
+          top: 50%;left: 50%;
+          width: 200px;height:200px;
+          transform: translate(-50%, -50%);
+          border:8px solid #eee;
+          border-radius:50%;
+          overflow:hidden;
+          background:#F48D00;
+          box-shadow:0 0 2px 0 #999;
+        }
+        .firefox::before{
+          content: "";
+          width: 46px;
+          height: 46px;
+          background: #A4DFEF;
+          border-radius: 100%;
+          position: absolute;
+          top: 90px;
+          left: 50px;
+          margin: auto;
+          border: 1px solid #A4DFEF;
+          box-shadow:
+            -10px 0 0 5px rgba(164, 223, 239, .2),
+            16px -60px 0 8px rgba(164, 223, 239, .2),
+            -30px -50px 0 8px #F48D00,
+            25px -38px 0 0px #A4DFEF,
+            -30px -30px 0 12px #F48D00,
+            15px -60px 0 8px #A4DFEF,
+            33px 31px 0 -15px #A4DFEF,
+            30px 17px 0 -13px #F48D00,
+            20px -10px 0 0px #A4DFEF,
+            -8px -0px 0 19px #F48D00,
+            30px 17px 0 0px #A4DFEF,
+            24px 30px 0 15px #F48D00,
+            20px -6px 0 28px #A4DFEF,
+            45px 10px 0 35px #F48D00,
+            -5px -57px 0 8px #F48D00,
+            20px -23px 0 45px #A4DFEF,
+            -5px -80px 0 8px #A4DFEF,
+            -30px -70px 0 8px #F48D00,
+            -5px -57px 0 8px #F48D00,
+            43px -11px 0 55px #F48D00,
+            22px -39px 0 55px #A4DFEF;
+        }
+        .firefox::after{
+          content: "";
+          width: 0px;
+          height: 2px;
+          background: linear-gradient(90deg,#F48D00 75% ,#333 30% );
+          background-size: 35px 35px;
+          position: absolute;
+          top: 50px;
+          left: 73px;
+          margin: auto;
+          border: solid;
+          border-width: 12px 0 15px 30px;
+          border-color: #A4DFEF #fff #A4DFEF transparent;
+          box-shadow: inset 0px 0 0 50px #333;
+        }
+      </style>
+    </section>
+  </div>
+</body>
+</html>
+
