@@ -423,6 +423,37 @@
       </style>
     </section>
 
+    <!-- spectiveBlur 利用阴影实现背景模糊效果 -->
+    <section id="spectiveBlur" class="code-wrap cf" style="z-index: 100">
+      <div class="css-live-wrap">
+        <summary>spectiveBlur</summary>
+        <summary>纯 CSS 方案实现背景变暗效果（hover按钮触发）</summary>
+        <hgroup class="spectiveBlur">
+        <h1>.spectiveBlur</h1>
+        </hgroup>
+      </div>
+      <style class="code" contenteditable=true>
+        .spectiveBlur{
+          position: absolute;
+          top: 50%;left: 50%;
+          width: 220px;line-height:160px;
+          transform: translate(-50%, -50%);
+          border-radius:10px;
+          overflow:hidden;
+          background:#E91E63;
+          color:#fff;
+          font-size:200%;
+          text-align:center;
+          cursor:pointer;
+          transition: transform .2s;
+        }
+        .spectiveBlur:hover{
+          box-shadow:0 0 0 1920px rgba(0,0,0,.7);
+          transform: translate(-50%, -50%) scale(1.2);
+        }
+      </style>
+    </section>
+
     <!-- stripe 渐变实现条纹背景图案 -->
     <section id="stripe" class="code-wrap cf">
       <div class="css-live-wrap">
