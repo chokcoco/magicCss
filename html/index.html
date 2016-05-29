@@ -1417,11 +1417,115 @@
             radial-gradient(#fff 12.5px, transparent 12.5px),
             radial-gradient(#fff 50px, transparent 50px),
             radial-gradient(#000 50px, transparent 50px),
-            linear-gradient(90deg,#000 100px, transparent 100px);
+            linear-gradient(90deg,#000 100px, #fff 100px);
           background-position:center 50px,center -50px,center 50px,center -50px,0 0;
         }
       </style>
     </section>
+
+    <!-- captainAmerica 利用渐变实现美队盾牌 -->
+    <section id="captainAmerica" class="code-wrap cf">
+      <div class="css-live-wrap">
+        <summary>美队盾牌（单标签实现）</summary>
+        <summary>利用 渐变 实现</summary>
+        <hgroup class="captainAmerica">
+        </hgroup>
+      </div>
+      <style class="code" contenteditable=true>
+        .captainAmerica{
+          position: absolute;
+          top: 50%;left: 50%;
+          width: 200px;height: 200px;
+          transform: translate(-50%, -50%);
+          background: 
+            linear-gradient(45deg, rgba(255,255,255,0) 35%, rgba(255,255,255,0.4) 50%, rgba(255,255,255,0) 65%), 
+            linear-gradient(-45deg, rgba(255,255,255,0) 35%, rgba(255,255,255,0.4) 50%, rgba(255,255,255,0) 65%), 
+            linear-gradient(to right, rgba(0,0,0,0) 35%, rgba(0,0,0,0.2) 50%, rgba(0,0,0,0) 65%), 
+            linear-gradient(to bottom, rgba(0,0,0,0) 35%, rgba(0,0,0,0.2) 50%, rgba(0,0,0,0) 65%), 
+            radial-gradient(ellipse at center, #0033b0 20%, #ce0021 20%, #ce0021 35%, #eee 35%, #eee 55%, #ce0021 55%);
+          border-radius: 50%;
+          box-shadow: 0 3px 0 #a20917,0 4px 2px 2px #eee;
+        }
+        .captainAmerica::before{
+          content: '★';
+          position:absolute;
+          top: 50%;left: 50%;
+          transform: translate(-50%, -50%);
+          margin-left:-3px;
+          width: 50px;height:50px;
+          font-family: simsun,Tahoma,Helvetica,Arial,SimHei,sans-serif; 
+          line-height: 47px;
+          z-index: 1;
+          border-radius: 50%;
+          font-size: 55px;
+          color: #fff;
+          text-align:center;
+          text-shadow: 2px 1px 2px #777;
+        }  
+      </style>
+    </section>
+
+    <!-- button 利用渐变、阴影实现纽扣 -->
+    <section id="button" class="code-wrap cf">
+      <div class="css-live-wrap">
+        <summary>纽扣（单标签实现）</summary>
+        <summary>利用 渐变、阴影 实现</summary>
+        <hgroup class="button">
+        </hgroup>
+      </div>
+      <style class="code" contenteditable=true>
+        .button{
+          position: absolute;
+          top: 50%;left: 50%;
+          transform: translate(-50%, -50%);
+          width: 180px;
+          height: 180px;
+          background: #87ceeb;
+          border-radius: 50%;
+          box-shadow: 
+            inset 0 5px 5px #87ceeb, 
+            inset 0 17px 5px rgba(255,255,255,0.7), 
+            inset 0 -3px 3px rgba(255,255,255,0.3), 
+            inset 0 -10px 10px rgba(0,0,0,0.3), 
+            inset 0 -15px 10px #45b3e0, 
+            0 7px 10px rgba(0,0,0,0.3);
+        }
+        .button::before{
+          content: '';
+          position:absolute;
+          top: 50%;left: 50%;
+          width: 110px;height: 106px;
+          margin-left: -55px;margin-top: -55px;
+          background-image: 
+            radial-gradient(circle at 38px 38px, #333 10px, transparent 10px), 
+            radial-gradient(circle at 73px 73px, #333 10px, transparent 10px), 
+            radial-gradient(circle at 38px 73px, #333 10px, transparent 10px), 
+            radial-gradient(circle at 73px 38px, #333 10px, transparent 10px);
+          border-radius: 50%;
+          border-top: 1px solid rgba(0,0,0,0.6);
+          border-bottom: 1px solid rgba(255,255,255,0.6);
+          box-shadow: 
+            inset 0 20px 2px rgba(255,255,255,0.3), 
+            3px -15px 7px -4px rgba(0,0,0,0.3), 
+            0 -14px 10px 5px #45b3e0, 
+            0 2px 5px 5px #87ceeb, 
+            0 10px 5px 5px rgba(255,255,255,0.6);
+        }
+        .button::after{
+          content: '';
+          position:absolute;
+          top: 50%;left: 50%;
+          width: 50px;height: 50px;
+          margin-left: -25px;
+          margin-top: -23px;
+          background-image: 
+            linear-gradient(to right, transparent 35%, #000080 35%, #4682b4 40%, #000080 45%, #4682b4 50%, #000080 55%, #4682b4 60%, #000080 65%, transparent 65%), 
+            linear-gradient(to bottom, transparent 35%, #000080 35%, #4682b4 40%, #000080 45%, #4682b4 50%, #000080 55%, #4682b4 60%, #000080 65%, transparent 65%);
+          border-radius: 50%;
+          transform: rotate(45deg);
+        }       
+      </style>
+    </section>    
 
     <!-- chrome 利用渐变实现 chrome 浏览器图标 -->
     <section id="chrome" class="code-wrap cf">
@@ -1758,6 +1862,51 @@
       </style>
     </section>
 
+    <!-- battery 利用渐变实现电池电量显示 -->
+    <section id="battery" class="code-wrap cf">
+      <div class="css-live-wrap" style="background-image: linear-gradient(#000 0%,#000 100%);background-size: 350px 200px;background-repeat: no-repeat;background-position: center center;">
+        <summary>电池电量显示（单标签实现）</summary>
+        <summary>利用 渐变 实现</summary>
+        <hgroup class="battery">
+        </hgroup>
+      </div>
+      <style class="code" contenteditable=true>
+        .battery{
+          position: absolute;
+          top: 50%;left: 50%;
+          transform: translate(-50%, -50%);
+          width: 250px;height: 120px;
+          border-radius: 10px/30px;
+          border-left: 2px solid rgba(255,255,255,0.2);
+          border-right: 2px solid rgba(255,255,255,0.2);
+          background-image: 
+            linear-gradient(to right, transparent 5%, #316d08 5%, #316d08 7%, #60b939 8%, #60b939 10%, #51aa31 11%, #51aa31 60%, #64ce11 61%, #64ce11 63%, #255405 63%, black 68%, black 95%, transparent 95%), 
+            linear-gradient(to bottom, rgba(255,255,255,0.5) 0%, rgba(255,255,255,0.4) 4%, rgba(255,255,255,0.2) 7%, rgba(255,255,255,0.2) 14%, rgba(255,255,255,0.8) 14%, rgba(255,255,255,0.2) 40%, rgba(255,255,255,0) 41%, rgba(255,255,255,0) 80%, rgba(255,255,255,0.2) 80%, rgba(255,255,255,0.4) 86%, rgba(255,255,255,0.6) 90%, rgba(255,255,255,0.1) 92%, rgba(255,255,255,0.1) 95%, rgba(255,255,255,0.5) 98%);
+        }
+        .battery::before{
+          content: '';
+          position:absolute;
+          top: 32px;right: -14px;
+          width: 12px;height: 55px;
+          border-top-right-radius: 6px 10px;
+          border-bottom-right-radius: 6px 10px;
+          background-image: linear-gradient(to bottom, rgba(255,255,255,0.5) 0%, rgba(255,255,255,0) 14%, rgba(255,255,255,0.8) 14%, rgba(255,255,255,0.3) 40%, rgba(255,255,255,0) 41%, rgba(255,255,255,0) 80%, rgba(255,255,255,0.2) 80%, rgba(255,255,255,0.4) 86%, rgba(255,255,255,0.6) 90%, rgba(255,255,255,0.1) 92%, rgba(255,255,255,0.1) 95%, rgba(255,255,255,0.5) 98%);
+        }
+        .battery::after{
+          content: '';
+          position:absolute;
+          width: 220px;height: 120px;
+          left: 10px;
+          border-radius: 5px/30px;
+          border-left: 4px solid black;
+          border-right: 4px solid black;
+          background-image: 
+            linear-gradient(to bottom, rgba(255,255,255,0.3) 4%, rgba(255,255,255,0.2) 5%, transparent 5%, transparent 14%, rgba(255,255,255,0.3) 14%, rgba(255,255,255,0.12) 40%, rgba(0,0,0,0.05) 42%, rgba(0,0,0,0.05) 48%, transparent 60%, transparent 80%, rgba(255,255,255,0.3) 87%, rgba(255,255,255,0.3) 92%, transparent 92%, transparent 97%, rgba(255,255,255,0.4) 97%), 
+            linear-gradient(to left, rgba(255,255,255,0.2) 0%, rgba(255,255,255,0.2) 2%, black 2%, black 6%, transparent 6%), 
+            linear-gradient(to bottom, rgba(255,255,255,0) 0%, rgba(255,255,255,0) 35%, rgba(255,255,255,0.3) 90%, rgba(255,255,255,0) 90%);
+        }
+      </style>
+    </section>
   </div>
 </body>
 </html>
