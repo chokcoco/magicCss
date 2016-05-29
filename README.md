@@ -18,5 +18,10 @@ CSS3奇思妙想，使用CSS3实现各类图形,持续更新中。
 
 [【CSS进阶】伪元素的妙用--单标签之美](http://www.cnblogs.com/coco1s/p/5528393.html)
 
+## 其他 CSS 作品
+[CSS3 3D 行星运转](http://chokcoco.github.io/demo/css3demo/html/exampleSolarSystem.html)
+
+[CSS3 3D 透视立方体照片墙](http://chokcoco.github.io/demo/css3demo/html/index.html)
+
 ## License
 MIT
