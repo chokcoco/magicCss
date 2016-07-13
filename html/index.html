@@ -1973,6 +1973,7 @@
       <div class="css-live-wrap">
         <summary>利用滤镜实现混合效果（单标签实现）</summary>
         <summary>利用 fliter:blur() 、filter:contrast() 实现</summary>
+        <summary>看不到效果请用 chrome，请用 chrome！</summary>
         <hgroup class="filter-mix">
         </hgroup>
       </div>
@@ -2038,6 +2039,55 @@
           50%{
             right:200px;
           }
+        }
+
+      </style>
+    </section>
+
+    <!-- hover-title 无 JS 代码，纯 CSS 实现 title 属性 hover 效果 -->
+    <section id="hover-title" class="code-wrap cf">
+      <div class="css-live-wrap">
+        <summary>纯CSS实现title属性hover效果（单标签实现）</summary>
+        <summary>利用伪元素 content 的可读取 attr 特性</summary>
+        <summary>鼠标hover文字可看到效果，使用审查元素查看HTML结构</summary>
+        <hgroup class="hover-title" data-msg="类title框展示">
+        Hover ME
+        </hgroup>
+      </div>
+      <style class="code" contenteditable=true>
+        .hover-title{
+          position: absolute;
+          top: 50%;left: 50%;
+          transform: translate(-50%, -50%);
+          width:120px;
+          line-height:38px;
+          color:#333;
+          text-align:center;
+          font-size:24px;
+          cursor:pointer;
+        }
+
+        .hover-title:hover::before{
+          content:attr(data-msg);
+          position:absolute;
+          top:-50px;
+          left:10px;
+          padding:2px 6px;
+          display:inline-block;
+          color:#333;
+          border:1px solid #333;
+          border-radius:5px;
+          font-size:14px;
+        }
+
+        .hover-title:hover::after{
+          content:"";
+          border-top:5px solid #333;
+          border-left:5px solid transparent;
+          border-right:5px solid transparent;
+          position:absolute;
+          top:-6px;
+          left:55px;
         }
 
       </style>
