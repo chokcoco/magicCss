@@ -22,6 +22,8 @@
 
 [【CSS进阶】伪元素的妙用--单标签之美](http://sbco.cc/2016/05/25/pesudo/)
 
+[【CSS进阶】伪元素的妙用2 - 多列均匀布局及title属性效果](http://www.cnblogs.com/coco1s/p/5667853.html)
+
 [【CSS进阶】box-shadow 与 filter:drop-shadow 详解及奇技淫巧](http://sbco.cc/2016/06/14/boxShadow/)
 
 ## 其他 CSS 作品
