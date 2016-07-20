@@ -697,7 +697,7 @@
           height: 50px;width: 50px;
           background: #FFFFFF;
           left:30%;
-          top:40%;
+          top:45%;
           transform: translate(-50%, -50%);
           border-radius: 50%;
           box-shadow:
@@ -738,6 +738,73 @@
         100%{
           transform: translate(-50%, -50%) scale(1);
             background:rgba(0,0,0,.5);
+        }
+      }
+      </style>
+    </section>
+
+    <!-- cloudy 阴影实现多云天气图案 -->
+    <section id="cloudy2" class="code-wrap cf">
+      <div class="css-live-wrap">
+        <summary>多云（cloudy2）（单标签实现）</summary>
+        <summary>利用线性渐变、阴影、缩放实现</summary>
+        <hgroup class="cloudy2">
+          <h1>.cloudy2</h1>
+        </hgroup>
+      </div>
+      <style class="code" contenteditable=true>
+        .cloudy2{
+          position: absolute;
+          top: 50%;left: 50%;
+          width:200px;height:260px;
+          transform: translate(-50%, -50%);
+          text-align:center;
+          font-size:200%;
+          color:#fff;
+          background:#2EB5E5;
+          border-radius:5px;
+        }
+        .cloudy2:before {
+          content: "";
+          text-indent:23px;
+          font-size:22px;
+          line-height:40px;
+          color:#333;
+          position: absolute;
+          height: 50px;width: 50px;
+          background: #FFFFFF;
+          left:30%;
+          top:55%;
+          transform: translate(-50%, -50%);
+          border-radius: 50%;
+          z-index:100;
+          box-shadow:
+            #FFFFFF 65px -15px 0 -5px,
+            #FFFFFF 25px -25px,
+            #FFFFFF 30px 10px,
+            #FFFFFF 60px 15px 0 -10px,
+            #FFFFFF 85px 5px 0 -5px;
+          animation: cloudy2 5s ease-in-out infinite;
+        }
+        .cloudy2:after{
+          content:"";
+          position: absolute;
+          top: 45%;left: 63%;
+          height: 60px;
+          width: 60px;
+          z-index:10;
+          background:linear-gradient(180deg,#FE9F38 0%, #F46635 100%);
+          border-radius: 50%;
+          transform: translate(-50%, -50%);
+          box-shadow: 0 0 10px 4px #FFA563;
+          animation: cloudy2 10s ease-in-out infinite;
+        }
+      @keyframes cloudy2 {
+        50%{
+          transform: translate(-50%, -70%);
+        }
+        100%{
+          transform: translate(-50%, -50%);
         }
       }
       </style>
