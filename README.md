@@ -31,8 +31,6 @@
 
 [CSS3 3D 透视立方体照片墙](http://chokcoco.github.io/demo/css3demo/html/index.html)
 
-[CSS3 3D 行星运转](http://chokcoco.github.io/demo/css3demo/html/exampleSolarSystem.html)
-
 [CSS3 3D 视角 -- 试试酷炫的 3D 视角](sbco.cc/demo/3dview/html/index.html)
 
 ## License
