@@ -22,6 +22,49 @@
     <img src="http://chokcoco.github.io/demo/curveJS/images/forkme.png">
   </a>
   <div class="container">
+    <!-- Heart-shaped -->
+    <section id="bubbly" class="code-wrap cf">
+      <div class="css-live-wrap">
+        <summary>心形</summary>
+        <summary>利用 圆形 和 正方形实现</summary>
+        <hgroup class="heartShaped">
+          <h1>.heartShaped</h1>
+        </hgroup>
+      </div>
+      <style class="code" contenteditable=true>
+        .heartShaped {
+          position: absolute;
+          top:50%;
+          left: 50%;
+          transform:translate(-50%,-50%) rotate(45deg);
+          background: rgba(255, 20, 147, .9);
+          width: 140px;
+          line-height: 140px;
+          text-align: center;
+          color: white;
+          font-size: 12px;
+        }
+        .heartShaped:before,
+        .heartShaped:after
+         {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: -70px;
+          width: 140px;
+          height: 140px;
+          border-radius: 50%;
+          background: rgb(255, 20, 147);
+          z-index: -1;
+        }
+        .heartShaped:after{
+          top: -70px;
+          left: 0;
+        }
+
+      </style>
+    </section>
+
     <!-- bubbly 气泡三角形-->
     <section id="bubbly" class="code-wrap cf">
       <div class="css-live-wrap">
