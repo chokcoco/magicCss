@@ -1,6 +1,6 @@
 # magicCss 
 
-`CSS3`奇思妙想，使用`CSS3`在单个标签内实现各类图形。
+`CSS3` 奇思妙想，使用 `CSS3` 在单个标签内实现各类图形。
 
 除去一些需要背景衬托的图形，本项目中所有图形均为单标签图形，即使用一个标签完成整个图案。
 
@@ -33,5 +33,4 @@
 [CSS3 3D 透视立方体照片墙](http://chokcoco.github.io/demo/css3demo/html/index.html)
 
 [CSS3 3D 视角 -- 试试酷炫的 3D 视角](sbco.cc/demo/3dview/html/index.html)
-
 
