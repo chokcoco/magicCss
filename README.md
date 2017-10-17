@@ -39,3 +39,5 @@
 [纯 CSS 实现波浪效果 || PURE CSS WAVE](https://codepen.io/Chokcoco/pen/EXJrdB)
 
 [纯 CSS 实现火焰效果 || PURE CSS FIRE](https://codepen.io/Chokcoco/pen/GvbMmE)
+
+[纯 CSS 实现文字融合效果](https://codepen.io/Chokcoco/pen/jLjNRj)
