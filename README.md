@@ -34,4 +34,6 @@
 
 [CSS3 3D 视角 -- 试试酷炫的 3D 视角](sbco.cc/demo/3dview/html/index.html)
 
-[纯CSS 3D 数字计数动画](https://codepen.io/Chokcoco/pen/qXVxyw)
+[纯 CSS 3D 数字计数动画](https://codepen.io/Chokcoco/pen/qXVxyw)
+
+[纯 CSS 实现波浪效果 || CSS WAVE](https://codepen.io/Chokcoco/pen/EXJrdB)
