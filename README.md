@@ -41,3 +41,6 @@
 [纯 CSS 实现火焰效果 || PURE CSS FIRE](https://codepen.io/Chokcoco/pen/GvbMmE)
 
 [纯 CSS 实现文字融合效果](https://codepen.io/Chokcoco/pen/jLjNRj)
+
+[使用颜色混合模式实现 loading 效果](https://codepen.io/Chokcoco/pen/zwPyWj)
+ 
