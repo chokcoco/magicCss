@@ -36,7 +36,9 @@
 
 [纯 CSS 3D 数字计数动画](https://codepen.io/Chokcoco/pen/qXVxyw)
 
-[纯 CSS 实现波浪效果 || PURE CSS WAVE](https://codepen.io/Chokcoco/pen/EXJrdB)
+[PURE CSS WAVE](https://codepen.io/Chokcoco/pen/awxYWZ)
+
+[纯 CSS 实现波浪百分比 loading](https://codepen.io/Chokcoco/pen/EXJrdB)
 
 [纯 CSS 实现火焰效果 || PURE CSS FIRE](https://codepen.io/Chokcoco/pen/GvbMmE)
 
@@ -44,3 +46,4 @@
 
 [使用颜色混合模式实现 loading 效果](https://codepen.io/Chokcoco/pen/zwPyWj)
  
+[] 
