@@ -46,4 +46,4 @@
 
 [使用颜色混合模式实现 loading 效果](https://codepen.io/Chokcoco/pen/zwPyWj)
  
-[] 
+[颜色混合模式实现花纹变换图形动画](https://codepen.io/Chokcoco/pen/VbMrKX)
