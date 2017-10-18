@@ -49,3 +49,5 @@
 [颜色混合模式实现花纹变换图形动画](https://codepen.io/Chokcoco/pen/VbMrKX)
 
 [颜色混合模式制作文字故障效果](https://codepen.io/Chokcoco/pen/RVxbWW)
+
+[clip-path 实现爆炸动画](https://codepen.io/Chokcoco/pen/XgJRzO)
