@@ -51,3 +51,5 @@
 [颜色混合模式制作文字故障效果](https://codepen.io/Chokcoco/pen/RVxbWW)
 
 [clip-path 实现爆炸动画](https://codepen.io/Chokcoco/pen/XgJRzO)
+
+[clip-path 实现任意多边形](https://codepen.io/Chokcoco/pen/NgqGOo?limit=mine&page=2&q=clip)
