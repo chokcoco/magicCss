@@ -58,4 +58,10 @@
 
 [圆锥渐变背景版](https://codepen.io/Chokcoco/pens/popular/9/)
 
+## Contact
 
+如果有任何问题或者疑问，可以加 QQ 群：418766876 联系我。
+
+也欢迎想讨论各种天马行空的 CSS 相关问题的小伙伴们加入。
+
+![qun](https://github.com/chokcoco/iCSS/blob/master/qqqun.png)
