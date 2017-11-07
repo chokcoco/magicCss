@@ -58,6 +58,8 @@
 
 [圆锥渐变背景版](https://codepen.io/Chokcoco/pens/popular/9/)
 
+[纯 CSS 实现文字输入效果](https://codepen.io/Chokcoco/pen/WXGoGB)
+
 ## Contact
 
 如果有任何问题或者疑问，可以加 QQ 群：418766876 联系我。
