@@ -9,6 +9,7 @@
 | [CSS3奇思妙想](http://sbco.cc/magicCss/html/index.html) | CSS3奇思妙想，单标签实现各类图形 |
 | [SVG奇思妙想](http://sbco.cc/demo/svg/html/index.html)  | 使用 `SVG` or `clip-path` 创建的图形 | 
 
+> 奇文共欣赏，疑义相与析。带着问题来也好，讨论各种黑科技、酷炫的 CSS 技术也行，[一键加 QQ 群讨论](//shang.qq.com/wpa/qunwpa?idkey=318940c0ae56f4556447291fb2fc6147a7b1760487c49c1e3410c377d946fc5a) 。
 
 ## 由来
 
