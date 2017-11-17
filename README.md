@@ -15,11 +15,11 @@
 
 拜读了 [《CSS Secret》](https://github.com/cssmagic/CSS-Secrets) 这本大作之后，有了这个项目的想法。其中带星号的图形为书中出现过的实例。
 
-大量使用了 `before` 、`after` 伪元素，`transparent border` ，`多重线性与径向渐变`，`多重内外阴影`，实现了许多奇妙的图形。
+大量使用了 `before` 、`after`、`transparent`、`border` ，伪元素，多重线性与径向渐变，多重内外阴影，实现了许多奇妙的图形。
 
 很多例子参照了书中得来，也有许多我工作中实践积攒而来的。
 
-## 个人相关博客
+## About
 
 [【CSS进阶】伪元素的妙用--单标签之美](http://sbco.cc/2016/05/25/pesudo/)
 
