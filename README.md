@@ -4,7 +4,7 @@
 
 除去一些需要背景衬托的图形，本项目中所有图形均为单标签图形，即使用一个标签完成整个图案。
 
-| Demo link | Description |
+| Demo链接 | Description |
 | ------| ------ | 
 | [CSS3奇思妙想](http://sbco.cc/magicCss/html/index.html) | CSS3奇思妙想，单标签实现各类图形 |
 | [SVG奇思妙想](http://sbco.cc/demo/svg/html/index.html)  | 使用 `SVG` or `clip-path` 创建的图形 | 
