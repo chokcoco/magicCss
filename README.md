@@ -6,8 +6,8 @@
 
 | Demo链接 | Description |
 | ------| ------ | 
-| [CSS3奇思妙想](http://sbco.cc/magicCss/html/index.html) | CSS3奇思妙想，单标签实现各类图形 |
-| [SVG奇思妙想](http://sbco.cc/demo/svg/html/index.html)  | 使用 `SVG` or `clip-path` 创建的图形 | 
+| [CSS3奇思妙想](https://chokcoco.github.io/magicCss/html/index.html) | CSS3奇思妙想，单标签实现各类图形 |
+| [SVG奇思妙想]((https://chokcoco.github.io/demo/svg/html/index.html)  | 使用 `SVG` or `clip-path` 创建的图形 | 
 
 ## 由来
 
@@ -19,11 +19,11 @@
 
 ## About
 
-[【CSS进阶】伪元素的妙用--单标签之美](http://sbco.cc/2016/05/25/pesudo/)
+[【CSS进阶】伪元素的妙用--单标签之美](https://www.cnblogs.com/coco1s/p/5528393.html)
 
 [【CSS进阶】伪元素的妙用2 - 多列均匀布局及title属性效果](http://www.cnblogs.com/coco1s/p/5667853.html)
 
-[【CSS进阶】box-shadow 与 filter:drop-shadow 详解及奇技淫巧](http://sbco.cc/2016/06/14/boxShadow/)
+[【CSS进阶】box-shadow 与 filter:drop-shadow 详解及奇技淫巧](https://www.cnblogs.com/coco1s/p/5592136.html)
 
 
 ## Contact
