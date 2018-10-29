@@ -7,7 +7,7 @@
 | Demo链接 | Description |
 | ------| ------ | 
 | [CSS3奇思妙想](https://chokcoco.github.io/magicCss/html/index.html) | CSS3奇思妙想，单标签实现各类图形 |
-| [SVG奇思妙想]((https://chokcoco.github.io/demo/svg/html/index.html)  | 使用 `SVG` or `clip-path` 创建的图形 | 
+| [SVG奇思妙想](https://chokcoco.github.io/demo/svg/html/index.html)  | 使用 `SVG` or `clip-path` 创建的图形 | 
 
 ## 由来
 
