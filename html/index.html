@@ -15,6 +15,17 @@
   height:0;
   overflow:hidden;
 }
+.blackfilter {
+  background: #000;
+  filter: blur(3px) contrast(10);
+}
+.mix-diff {
+  mix-blend-mode: difference;
+  z-index: 1;
+}
+.blackbg {
+  background: #000;
+}
 </style>
 <body>
   <h1 style="height: 0;overflow: hidden;">CSS3奇思妙想，使用CSS3实现各类图形</h1>
@@ -589,34 +600,6 @@
       </style>
     </section>
 
-    <!-- stripe 渐变实现条纹背景图案 -->
-    <section class="code-wrap cf">
-      <div class="css-live-wrap">
-        <summary>混合模式背景图</summary>
-        <summary>利用渐变实现</summary>
-        <hgroup class="colorful-stripe">
-          <h1>.colorful-stripe</h1>
-        </hgroup>
-      </div>
-      <style class="code" contenteditable=true>
-        .colorful-stripe {
-          position: absolute;
-          top: 50%;
-          left: 50%;
-          transform: translate(-50%, -50%);
-          width: 300px;
-          line-height: 200px;
-          text-align: center;
-          color: #fff;
-          font-size: 200%;
-          border-radius: .5em;
-          background:
-          linear-gradient(limegreen, transparent), linear-gradient(90deg, skyblue, transparent), linear-gradient(-90deg, coral, transparent);
-          background-blend-mode: screen;
-        }
-      </style>
-    </section>
-
     <!-- stripe 渐变实现随机背景图案 -->
     <section class="code-wrap cf">
       <div class="css-live-wrap">
@@ -646,6 +629,41 @@
           linear-gradient(90deg, #CC99CC 41px, transparent 0),
           linear-gradient(90deg, #ff9933 53px, transparent 0);
           background-size: 59px 100%, 61px 100%, 83px 100%, 103px 100%;
+        }
+      </style>
+    </section>
+
+    <!-- stripe 渐变实现条纹背景图案 -->
+    <section class="code-wrap cf">
+      <div class="css-live-wrap">
+        <summary>渐变背景色动画</summary>
+        <summary>利用滤镜hue-rotate实现</summary>
+        <hgroup class="colorful-stripe">
+          <h1>.colorful-stripe</h1>
+        </hgroup>
+      </div>
+      <style class="code" contenteditable=true>
+        .colorful-stripe {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          width: 300px;
+          line-height: 200px;
+          text-align: center;
+          color: #fff;
+          font-size: 200%;
+          border-radius: .5em;
+          background:
+          linear-gradient(limegreen, transparent), linear-gradient(90deg, skyblue, transparent), linear-gradient(-90deg, coral, transparent);
+          background-blend-mode: screen;
+          animation: colorfulStripeChange 5s infinite alternate linear;
+        }
+
+        @keyframes colorfulStripeChange {
+          100% {
+            filter: hue-rotate(360deg);
+          }
         }
       </style>
     </section>
@@ -1956,52 +1974,6 @@
       </style>
     </section>
 
-    <!-- battery 利用渐变实现电池电量显示 -->
-    <section id="battery" class="code-wrap cf">
-      <div class="css-live-wrap" style="background-image: linear-gradient(#000 0%,#000 100%);background-size: 350px 200px;background-repeat: no-repeat;background-position: center center;">
-        <summary>电池电量显示（单标签实现）</summary>
-        <summary>利用 渐变 实现</summary>
-        <hgroup class="battery">
-        </hgroup>
-      </div>
-      <style class="code" contenteditable=true>
-        .battery{
-          position: absolute;
-          top: 50%;left: 50%;
-          transform: translate(-50%, -50%);
-          width: 250px;height: 120px;
-          border-radius: 10px/30px;
-          border-left: 2px solid rgba(255,255,255,0.2);
-          border-right: 2px solid rgba(255,255,255,0.2);
-          background-image:
-            linear-gradient(to right, transparent 5%, #316d08 5%, #316d08 7%, #60b939 8%, #60b939 10%, #51aa31 11%, #51aa31 60%, #64ce11 61%, #64ce11 63%, #255405 63%, black 68%, black 95%, transparent 95%),
-            linear-gradient(to bottom, rgba(255,255,255,0.5) 0%, rgba(255,255,255,0.4) 4%, rgba(255,255,255,0.2) 7%, rgba(255,255,255,0.2) 14%, rgba(255,255,255,0.8) 14%, rgba(255,255,255,0.2) 40%, rgba(255,255,255,0) 41%, rgba(255,255,255,0) 80%, rgba(255,255,255,0.2) 80%, rgba(255,255,255,0.4) 86%, rgba(255,255,255,0.6) 90%, rgba(255,255,255,0.1) 92%, rgba(255,255,255,0.1) 95%, rgba(255,255,255,0.5) 98%);
-        }
-        .battery::before{
-          content: '';
-          position:absolute;
-          top: 32px;right: -14px;
-          width: 12px;height: 55px;
-          border-top-right-radius: 6px 10px;
-          border-bottom-right-radius: 6px 10px;
-          background-image: linear-gradient(to bottom, rgba(255,255,255,0.5) 0%, rgba(255,255,255,0) 14%, rgba(255,255,255,0.8) 14%, rgba(255,255,255,0.3) 40%, rgba(255,255,255,0) 41%, rgba(255,255,255,0) 80%, rgba(255,255,255,0.2) 80%, rgba(255,255,255,0.4) 86%, rgba(255,255,255,0.6) 90%, rgba(255,255,255,0.1) 92%, rgba(255,255,255,0.1) 95%, rgba(255,255,255,0.5) 98%);
-        }
-        .battery::after{
-          content: '';
-          position:absolute;
-          width: 220px;height: 120px;
-          left: 10px;
-          border-radius: 5px/30px;
-          border-left: 4px solid black;
-          border-right: 4px solid black;
-          background-image:
-            linear-gradient(to bottom, rgba(255,255,255,0.3) 4%, rgba(255,255,255,0.2) 5%, transparent 5%, transparent 14%, rgba(255,255,255,0.3) 14%, rgba(255,255,255,0.12) 40%, rgba(0,0,0,0.05) 42%, rgba(0,0,0,0.05) 48%, transparent 60%, transparent 80%, rgba(255,255,255,0.3) 87%, rgba(255,255,255,0.3) 92%, transparent 92%, transparent 97%, rgba(255,255,255,0.4) 97%),
-            linear-gradient(to left, rgba(255,255,255,0.2) 0%, rgba(255,255,255,0.2) 2%, black 2%, black 6%, transparent 6%),
-            linear-gradient(to bottom, rgba(255,255,255,0) 0%, rgba(255,255,255,0) 35%, rgba(255,255,255,0.3) 90%, rgba(255,255,255,0) 90%);
-        }
-      </style>
-    </section>
-
     <!-- wave 利用背景图实现波浪水纹效果 -->
     <section id="wave" class="code-wrap cf">
       <div class="css-live-wrap">
@@ -2315,6 +2287,209 @@
         }
       </style>
     </section>
+
+    <!-- 单标签实现抖音LOGO -->
+    <section id="tiktok-logo" class="code-wrap cf">
+      <div class="css-live-wrap">
+        <summary>单标签实现抖音LOGO</summary>
+        <summary>借助了两个伪元素实现了整体结构</summary>
+        <summary>借助了 shadow 生成另外两层整体阴影</summary>
+        <div class="tiktok-logo"></div>
+      </div>
+      <style class="code" contenteditable=true>
+        .tiktok-logo {
+          position: relative;
+          width: 37px;
+          height: 218px;
+          margin: 100px auto;
+          z-index: 1;
+          background: #fff;
+          filter:drop-shadow(-10px -10px 0 #24f6f0) contrast(150%) brightness(110%);
+          box-shadow: 11.6px 10px 0 0 #fe2d52;
+          z-index: 10;
+          top: -60px;
+        }
+        .tiktok-logo::before {
+          content: "";
+          position: absolute;
+          width: 100px;
+          height: 100px;
+          border: 37px solid #fff;
+          border-top: 37px solid transparent;
+          border-radius: 50%;
+          top: 123px;
+          left: -137px;
+          transform: rotate(45deg);
+          filter: drop-shadow(16px 0px 0 #fe2d52);
+        }
+          
+        .tiktok-logo::after {
+          content: "";
+          position: absolute;
+          width: 140px;
+          height: 140px;
+          border: 30px solid #fff;
+          border-right: 30px solid transparent;
+          border-top: 30px solid transparent;
+          border-left: 30px solid transparent;
+          top: -100px;
+          right: -172px;
+          border-radius: 100%;
+          transform: rotate(45deg);
+          z-index: -10;
+          filter:drop-shadow(14px 0 0 #fe2d52);
+        }
+      
+      </style>
+    </section>
+
+    <!-- 单标签实现滴水效果 -->
+    <section id="drop-water" class="code-wrap cf">
+      <summary class="mix-diff">单标签实现滴水效果</summary>
+      <summary class="mix-diff">借助了滤镜 blur, contrast</summary>
+      <div class="css-live-wrap blackfilter">
+
+        <div class="drop-water">MAGICCSS</div>
+      </div>
+      <style class="code" contenteditable=true>
+        .drop-water {
+          position: relative;
+          width: 640px;
+          height: 126px;
+          color: #fff;
+          font-size: 124px;
+          text-align: center;
+          margin: 100px auto;
+          border-bottom: 10px solid #fff;
+          transform: skewY(5deg);
+        }
+        .drop-water::before {
+          position: absolute;
+          content: "";
+          bottom : -20px;
+          width: 10px;
+          height: 20px;
+          border-radius: 50%;
+          background: #fff;
+          transform: translate(0, 0);
+          animation: move 7.5s ease-in-out infinite;
+        }
+          
+        .drop-water::after {
+            position: absolute;
+            content: "";
+            left: 0;
+            bottom : -20px;
+            width: 10px;
+            height: 20px;
+            border-radius: 50%;
+            background: #fff;
+            transform: translate(0, 0);
+            animation: move 7.5s ease-in-out 1s infinite;
+        }
+      
+        @keyframes move {
+            80% {        
+                bottom : -30px;
+                transform: translate(623px, 0);
+            } 93% {
+                transform: translate(623px, 3px);
+                opacity: 1;
+            }100% {
+                transform: translate(623px, 150px);
+                opacity: 0;
+            }
+        }
+      </style>
+    </section>
+
+    <!-- 单标签实现水波效果 -->
+    <section id="css-water" class="code-wrap cf">
+      <summary class="mix-diff">单标签实现水波效果</summary>
+      <summary class="mix-diff">借助了滤镜 blur, contrast</summary>
+      <summary class="mix-diff">借助了混合模式background-blend-mode: difference</summary>
+      <div class="css-live-wrap blackfilter">
+        <div class="css-water"></div>
+      </div>
+      <style class="code" contenteditable=true>
+        .css-water {
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          background: radial-gradient(51vw, #ddd 0%, #666 10%, #fff, #000, #999) 27vw 95vh, radial-gradient(45vw, #ddd 0%, #666 10%, #fff, #000, #999) 59vw 78vh, radial-gradient(57vw, #ddd 0%, #666 10%, #fff, #000, #999) 85vw 62vh, radial-gradient(83vw, #ddd 0%, #666 10%, #fff, #000, #999) 91vw 64vh, radial-gradient(54vw, #ddd 0%, #666 10%, #fff, #000, #999) 52vw 13vh, radial-gradient(62vw, #ddd 0%, #666 10%, #fff, #000, #999) 4vw 34vh, radial-gradient(71vw, #ddd 0%, #666 10%, #fff, #000, #999) 8vw 81vh, radial-gradient(81vw, #ddd 0%, #666 10%, #fff, #000, #999) 28vw 80vh, radial-gradient(79vw, #ddd 0%, #666 10%, #fff, #000, #999) 82vw 93vh;
+          -webkit-animation: waveMove 10s infinite alternate;
+                  animation: waveMove 10s infinite alternate;
+          background-blend-mode: difference;
+          -webkit-filter: blur(1px) contrast(5);
+                  filter: blur(1px) contrast(5);
+        }
+        .css-water::before {
+          content: "";
+          position: absolute;
+          top: 0;
+          right: 0;
+          bottom: 0;
+          left: 0;
+          background: #03a9f4;
+          mix-blend-mode: color-burn;
+        }
+
+        @-webkit-keyframes waveMove {
+          100% {
+            background-position: -11vw -41vh, 33vw 77vh, 5vw -10vh, -4vw 2vh, 3vw -30vh, -33vw -31vh, -33vw -46vh, 34vw -39vh, 78vw 43vh;
+          }
+        }
+
+        @keyframes waveMove {
+          100% {
+            background-position: -11vw -41vh, 33vw 77vh, 5vw -10vh, -4vw 2vh, 3vw -30vh, -33vw -31vh, -33vw -46vh, 34vw -39vh, 78vw 43vh;
+          }
+        }
+      </style>
+    </section>
+      
+    <!-- 实现霓虹氖灯文字效果 -->
+    <section id="pink" class="code-wrap cf">
+      <div class="css-live-wrap blackbg">
+        <summary class="mix-diff">实现霓虹氖灯文字效果</summary>
+        <summary class="mix-diff">借助了box-shadow</summary>
+        <p class="pink">Box-Shadow</p>
+      </div>
+      <style class="code" contenteditable=true>
+        @import url("https://fonts.googleapis.com/css?family=Lobster");
+        .pink {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          font-family: "Lobster";
+          text-align: center;
+          font-size: 10vmin;
+          line-height: 20vmin;
+          color: #fff;
+          cursor: pointer;
+          -webkit-filter: brightness(110%);
+                  filter: brightness(110%);
+          text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #e91e63, 0 0 35px #e91e63, 0 0 40px #e91e63, 0 0 50px #e91e63, 0 0 75px #e91e63;
+          -webkit-animation: pink 1.5s ease-in-out infinite alternate;
+                  animation: pink 1.5s ease-in-out infinite alternate;
+        }
+        @-webkit-keyframes pink {
+          to {
+            text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #e91e63, 0 0 70px #e91e63, 0 0 80px #e91e63, 0 0 100px #e91e63, 0 0 150px #e91e63;
+          }
+        }
+
+        @keyframes pink {
+          to {
+            text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #e91e63, 0 0 70px #e91e63, 0 0 80px #e91e63, 0 0 100px #e91e63, 0 0 150px #e91e63;
+          }
+        }
+      </style>
+    </section>
+    
   </div>
   <script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1259441963'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s4.cnzz.com/z_stat.php%3Fid%3D1259441963' type='text/javascript'%3E%3C/script%3E"));</script>
 </body>
