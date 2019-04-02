@@ -17,7 +17,8 @@
 }
 .blackfilter {
   background: #000;
-  filter: blur(3px) contrast(10);
+  -webkit-filter: blur(3px) contrast(10);
+          filter: blur(3px) contrast(10);
 }
 .mix-diff {
   mix-blend-mode: difference;
@@ -633,7 +634,7 @@
       </style>
     </section>
 
-    <!-- stripe 渐变实现条纹背景图案 -->
+    <!-- stripe 渐变背景色动画 -->
     <section class="code-wrap cf">
       <div class="css-live-wrap">
         <summary>渐变背景色动画</summary>
@@ -647,24 +648,32 @@
           position: absolute;
           top: 50%;
           left: 50%;
-          transform: translate(-50%, -50%);
+          -webkit-transform: translate(-50%, -50%);
+                  transform: translate(-50%, -50%);
           width: 300px;
           line-height: 200px;
           text-align: center;
           color: #fff;
           font-size: 200%;
           border-radius: .5em;
-          background:
-          linear-gradient(limegreen, transparent), linear-gradient(90deg, skyblue, transparent), linear-gradient(-90deg, coral, transparent);
+          background: linear-gradient(limegreen, transparent), linear-gradient(90deg, skyblue, transparent), linear-gradient(-90deg, coral, transparent);
           background-blend-mode: screen;
-          animation: colorfulStripeChange 5s infinite alternate linear;
+          -webkit-animation: colorfulStripeChange 5s infinite alternate linear;
+                  animation: colorfulStripeChange 5s infinite alternate linear;
         }
-
-        @keyframes colorfulStripeChange {
+        @-webkit-keyframes colorfulStripeChange {
           100% {
-            filter: hue-rotate(360deg);
+            -webkit-filter: hue-rotate(360deg);
+                    filter: hue-rotate(360deg);
           }
         }
+        @keyframes colorfulStripeChange {
+          100% {
+            -webkit-filter: hue-rotate(360deg);
+                    filter: hue-rotate(360deg);
+          }
+        }
+
       </style>
     </section>
 
@@ -2361,44 +2370,71 @@
           text-align: center;
           margin: 100px auto;
           border-bottom: 10px solid #fff;
-          transform: skewY(5deg);
+          -webkit-transform: skewY(5deg);
+                  transform: skewY(5deg);
         }
         .drop-water::before {
           position: absolute;
           content: "";
-          bottom : -20px;
+          bottom: -20px;
           width: 10px;
           height: 20px;
           border-radius: 50%;
           background: #fff;
-          transform: translate(0, 0);
-          animation: move 7.5s ease-in-out infinite;
+          -webkit-transform: translate(0, 0);
+                  transform: translate(0, 0);
+          -webkit-animation: move 7.5s ease-in-out infinite;
+                  animation: move 7.5s ease-in-out infinite;
         }
-          
         .drop-water::after {
-            position: absolute;
-            content: "";
-            left: 0;
-            bottom : -20px;
-            width: 10px;
-            height: 20px;
-            border-radius: 50%;
-            background: #fff;
-            transform: translate(0, 0);
-            animation: move 7.5s ease-in-out 1s infinite;
+          position: absolute;
+          content: "";
+          left: 0;
+          bottom: -20px;
+          width: 10px;
+          height: 20px;
+          border-radius: 50%;
+          background: #fff;
+          -webkit-transform: translate(0, 0);
+                  transform: translate(0, 0);
+          -webkit-animation: move 7.5s ease-in-out 1s infinite;
+                  animation: move 7.5s ease-in-out 1s infinite;
         }
-      
+
+        @-webkit-keyframes move {
+          80% {
+            bottom: -30px;
+            -webkit-transform: translate(623px, 0);
+                    transform: translate(623px, 0);
+          }
+          93% {
+            -webkit-transform: translate(623px, 3px);
+                    transform: translate(623px, 3px);
+            opacity: 1;
+          }
+          100% {
+            -webkit-transform: translate(623px, 150px);
+                    transform: translate(623px, 150px);
+            opacity: 0;
+          }
+        }
+
         @keyframes move {
-            80% {        
-                bottom : -30px;
-                transform: translate(623px, 0);
-            } 93% {
-                transform: translate(623px, 3px);
-                opacity: 1;
-            }100% {
-                transform: translate(623px, 150px);
-                opacity: 0;
-            }
+          80% {
+            bottom: -30px;
+            -webkit-transform: translate(623px, 0);
+                    transform: translate(623px, 0);
+          }
+          93% {
+            -webkit-transform: translate(623px, 3px);
+                    transform: translate(623px, 3px);
+            opacity: 1;
+          }
+          100% {
+            -webkit-transform: translate(623px, 150px);
+                    transform: translate(623px, 150px);
+            opacity: 0;
+          }
         }
       </style>
     </section>
