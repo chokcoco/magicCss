@@ -17,8 +17,8 @@
 }
 .blackfilter {
   background: #000;
-  -webkit-filter: blur(3px) contrast(10);
-          filter: blur(3px) contrast(10);
+  -webkit-filter: blur(4px) contrast(10);
+          filter: blur(4px) contrast(10);
 }
 .mix-diff {
   mix-blend-mode: difference;
@@ -26,6 +26,9 @@
 }
 .blackbg {
   background: #000;
+}
+.flex-wrap {
+  display: flex;
 }
 </style>
 <body>
@@ -482,6 +485,66 @@
           background-repeat: repeat-x;
           background-size: .15em .1em;
           background-position: 0 1.15em;
+        }
+      </style>
+    </section>
+
+    <!-- border 伪元素 实现线条loading -->
+    <section id="lineLoading" class="code-wrap cf">
+      <div class="css-live-wrap flex-wrap">
+        <summary>线条 loading</summary>
+        <summary>利用 border / 伪元素 实现</summary>
+        <div class="g-loading-line"></div>
+      </div>
+      <style class="code" contenteditable=true>
+        .g-loading-line {
+          position: relative;
+          width: 200px;
+          height: 200px;
+          border-radius: 50%;
+          margin: auto;
+          transform: rotate(360deg);
+          animation: rotate 45s infinite linear;
+        } 
+
+        .g-loading-line::before {
+            position: absolute;
+            content: "";
+            top: 0px;
+            left: 0px;
+            right: 0px;
+            bottom: 0px;
+            box-sizing: border-box;
+            border-radius: 50%;
+            border-top: 3px solid #000;
+            border-left: 3px solid #000;
+            border-bottom: 3px solid transparent;
+            border-right: 3px solid transparent;
+            transform: rotate(720deg);
+            animation: rotate 3s infinite ease-out;
+        }
+
+        .g-loading-line::after {
+            position: absolute;
+            content: "";
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            box-sizing: border-box;
+            border-radius: 50%;
+            border-bottom: 7px solid transparent;
+            border-right: 7px solid transparent;
+            border-top: 7px solid #fff;
+            border-left: 7px solid #fff;
+            transform: rotate(720deg);
+            animation: rotate 3s infinite ease-in-out;
+        }
+
+        @keyframes rotate {
+            100% {
+                transform: rotate(0deg);
+            }
         }
       </style>
     </section>
@@ -2352,6 +2415,79 @@
       </style>
     </section>
 
+    <!-- ghost -->
+    <section id="ghost" class="code-wrap cf">
+      <summary class="mix-diff">单标签幽灵图👻</summary>
+      <summary class="mix-diff">利用径向渐变 / 伪元素 / 滤镜实现</summary>
+      <div class="css-live-wrap flex-wrap blackfilter">
+
+        <div class="ghost"></div>
+      </div>
+      <style class="code" contenteditable=true>
+        .ghost {
+          position: relative;
+          width: 80px;
+          height: 120px;
+          background: 
+              radial-gradient(circle at 60px 40px, #000, #000 7px, transparent 7px),
+              radial-gradient(circle at 40px 40px, #000, #000 7px, transparent 7px),
+              radial-gradient(circle at 50px 50px, #fff, #fff);
+          background-size: 100% 100%; 
+          background-repeat: no-repeat;
+          margin: auto;
+          border-radius: 40px 40px 60px 20px;
+          transform: skewX(-10deg);
+          animation: moveMain 2s infinite ease-out;
+        }
+
+        .ghost::before,
+        .ghost::after {
+            content: "";
+            position: absolute;
+            background: #fff;
+            border-radius: 50%;
+        }
+
+        .ghost::before {
+            width: 20px;
+            height: 20px;
+            top: 50px;
+            left: -10px;
+            box-shadow: 0 0 0 1px #fff;
+            animation: moveghost 2s infinite ease-in;
+        }
+
+        .ghost::after {
+            width: 30px;
+            height: 25px;
+            top: 95px;
+            left: -10px;
+            box-shadow: 0 0 0 1px #fff;
+            animation: moveghost2 2s infinite ease-in;
+        }
+
+        @keyframes moveghost {
+            80%,
+            100% {
+                box-shadow: -60px 0 0 .5px rgba(255, 255, 255, .3);
+            }
+        }
+
+        @keyframes moveghost2 {
+            80%,
+            100% {
+                box-shadow: -100px 0 0 .5px rgba(255, 255, 255, .2);
+            }
+        }
+
+        @keyframes moveMain {
+            42% {
+                transform: skewX(-10deg) translate(40px, 0);
+            }
+        }
+      </style>
+    </section>
+
     <!-- 单标签实现滴水效果 -->
     <section id="drop-water" class="code-wrap cf">
       <summary class="mix-diff">单标签实现滴水效果</summary>
@@ -2376,6 +2512,7 @@
         .drop-water::before {
           position: absolute;
           content: "";
+          left: 0;
           bottom: -20px;
           width: 10px;
           height: 20px;
@@ -2404,17 +2541,17 @@
         @-webkit-keyframes move {
           80% {
             bottom: -30px;
-            -webkit-transform: translate(623px, 0);
-                    transform: translate(623px, 0);
+            -webkit-transform: translate(620px, 0);
+                    transform: translate(620px, 0);
           }
           93% {
-            -webkit-transform: translate(623px, 3px);
-                    transform: translate(623px, 3px);
+            -webkit-transform: translate(620px, 3px);
+                    transform: translate(620px, 3px);
             opacity: 1;
           }
           100% {
-            -webkit-transform: translate(623px, 150px);
-                    transform: translate(623px, 150px);
+            -webkit-transform: translate(620px, 150px);
+                    transform: translate(620px, 150px);
             opacity: 0;
           }
         }
@@ -2422,17 +2559,17 @@
         @keyframes move {
           80% {
             bottom: -30px;
-            -webkit-transform: translate(623px, 0);
-                    transform: translate(623px, 0);
+            -webkit-transform: translate(620px, 0);
+                    transform: translate(620px, 0);
           }
           93% {
-            -webkit-transform: translate(623px, 3px);
-                    transform: translate(623px, 3px);
+            -webkit-transform: translate(620px, 3px);
+                    transform: translate(620px, 3px);
             opacity: 1;
           }
           100% {
-            -webkit-transform: translate(623px, 150px);
-                    transform: translate(623px, 150px);
+            -webkit-transform: translate(620px, 150px);
+                    transform: translate(620px, 150px);
             opacity: 0;
           }
         }
